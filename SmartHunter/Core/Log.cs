@@ -32,5 +32,9 @@ namespace SmartHunter.Core
         }
 
         public static void WriteException(Exception exception) => WriteLine($"{exception.GetType().Name}: {exception.Message}\r\n{exception.StackTrace}");
+
+        public static void WriteWarning(string warning) =>
+            // prep for adding support for colored messages to ConsoleWindow.
+            WriteLine(warning);
     }
 }
