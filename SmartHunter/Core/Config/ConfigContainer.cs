@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 using System;
 using System.IO;
 
@@ -38,18 +37,16 @@ namespace SmartHunter.Core.Config
                 try
                 {
                     string contents = null;
-                    using (FileStream stream = File.Open(FullPathFileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-                    {
-                        using (StreamReader reader = new StreamReader(stream, System.Text.Encoding.UTF8))
-                        {
-                            contents = reader.ReadToEnd();
-                        }
-                    }
+                    using var stream = File.Open(FullPathFileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                    using var reader = new StreamReader(stream, System.Text.Encoding.UTF8);
+                    contents = reader.ReadToEnd();
 
-                    var settings = new JsonSerializerSettings();
-                    settings.Formatting = Formatting.Indented;
-                    settings.ContractResolver = new ContractResolver();
-                    settings.Error = HandleDeserializationError;
+                    var settings = new JsonSerializerSettings
+                    {
+                        Formatting = Formatting.Indented,
+                        ContractResolver = new ContractResolver(),
+                        Error = HandleDeserializationError,
+                    };
 
                     // Solves dictionary/lists being added to instead of overwritten but causes problems elsewhere
                     // https://stackoverflow.com/questions/29113063/json-net-why-does-it-add-to-list-instead-of-overwriting
@@ -73,10 +70,7 @@ namespace SmartHunter.Core.Config
                 Save();
             }
 
-            if (Loaded != null)
-            {
-                Loaded(this, null);
-            }
+            Loaded?.Invoke(this, null);
         }
 
         public void Save()
