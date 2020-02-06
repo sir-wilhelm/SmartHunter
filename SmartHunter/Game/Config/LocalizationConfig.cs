@@ -190,6 +190,11 @@ namespace SmartHunter.Config
             { "LOC_PART_31", "31" },
             { "LOC_PART_32", "32" },
 
+            //removables
+            { "LOC_REMOVABLE_PART_HEAD", "Removable Head" },
+            { "LOC_REMOVABLE_PART_HEAD_HEAD", "Removable Head+" },
+            { "LOC_REMOVABLE_PART_HEAD_HEAD_HEAD", "Removable Head++" },
+
             //statuses
             { "LOC_STATUS_0", "Status 0" },
             { "LOC_STATUS_EFFECT_UNKNOWN", "Unknown Status Effect" },
@@ -204,7 +209,7 @@ namespace SmartHunter.Config
             { "LOC_STATUS_EFFECT_TRANQUILIZE", "Tranquilize" },
             { "LOC_STATUS_EFFECT_FLASH", "Flash" },
             { "LOC_STATUS_EFFECT_DUNG", "Dung Pods" },
-            { "LOC_STATUS_EFFECT_KNOW_DOWN", "Kown Down" },
+            { "LOC_STATUS_EFFECT_KNOW_DOWN", "Knockdown" },
             { "LOC_STATUS_EFFECT_SMOKING", "Smoking" },
             { "LOC_STATUS_EFFECT_VIOLATED", "Violated" },
             { "LOC_STATUS_EFFECT_CLAW_ATTACK", "Claw Attack" },
