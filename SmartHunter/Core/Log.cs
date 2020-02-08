@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using System.IO;
 using System.Security.AccessControl;
 
@@ -17,7 +18,7 @@ namespace SmartHunter.Core
 
             LineReceived?.Invoke(null, new GenericEventArgs<string>(line));
 
-            bool isDesignInstance = System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Designtime;
+            bool isDesignInstance = LicenseManager.UsageMode == LicenseUsageMode.Designtime;
             if (!isDesignInstance)
             {
                 try

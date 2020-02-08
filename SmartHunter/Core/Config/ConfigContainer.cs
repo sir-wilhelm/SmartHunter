@@ -1,6 +1,10 @@
-using Newtonsoft.Json;
 using System;
+using System.ComponentModel;
 using System.IO;
+using System.Text;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ErrorEventArgs = Newtonsoft.Json.Serialization.ErrorEventArgs;
 
 namespace SmartHunter.Core.Config
 {
@@ -12,14 +16,14 @@ namespace SmartHunter.Core.Config
 
         public ConfigContainer(string fileName) : base(fileName)
         {
-            bool isDesignInstance = System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Designtime;
+            bool isDesignInstance = LicenseManager.UsageMode == LicenseUsageMode.Designtime;
             if (!isDesignInstance)
             {
                 Load();
             }
         }
 
-        public void HandleDeserializationError(object sender, Newtonsoft.Json.Serialization.ErrorEventArgs args)
+        public void HandleDeserializationError(object sender, ErrorEventArgs args)
         {
             Log.WriteException(args.ErrorContext.Error);
             args.ErrorContext.Handled = true;
@@ -32,7 +36,7 @@ namespace SmartHunter.Core.Config
 
         void Load()
         {
-            if (File.Exists(FullPathFileName))
+            if (File.Exists(FullPathFileName))// && FileName.Equals("Config.json"))
             {
                 try
                 {
@@ -58,7 +62,7 @@ namespace SmartHunter.Core.Config
                     // https://stackoverflow.com/questions/27848547/explanation-for-objectcreationhandling-using-newtonsoft-json
                     // This has been moved to ContractResolver to target Dictionaries specifically
                     // settings.ObjectCreationHandling = ObjectCreationHandling.Replace;
-                    settings.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
+                    settings.Converters.Add(new StringEnumConverter());
                     settings.Converters.Add(new StringFloatConverter());
 
                     JsonConvert.PopulateObject(contents, Values, settings);
