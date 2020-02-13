@@ -66,7 +66,7 @@ namespace SmartHunter.Core
                         () => ConfigHelper.Main.Values.AutomaticallyCheckAndDownloadUpdates,
                         () =>
                         {
-                            Log.WriteLine("Searching for updates (You can disable this feature in file 'Config.json')!");
+                            Log.WriteLine("Searching for updates (You can disable this feature in file 'Config.json').");
                         }),
                     new StateMachine<State>.Transition(
                         State.WaitingForProcess,
@@ -93,7 +93,7 @@ namespace SmartHunter.Core
                         () => updater.CheckForUpdates(),
                         () =>
                         {
-                            Log.WriteLine("Starting to download Updates!");
+                            Log.WriteLine("Starting to download Updates.");
                         })
                 }));
 
@@ -106,14 +106,14 @@ namespace SmartHunter.Core
                         () => updater.DownloadUpdates(),
                         () =>
                         {
-                            Log.WriteLine("Successfully downloaded all files!");
+                            Log.WriteLine("Successfully downloaded all files.");
                         }),
                     new StateMachine<State>.Transition(
                         State.WaitingForProcess,
                         () => !updater.DownloadUpdates(),
                         () =>
                         {
-                            Log.WriteLine("Failed to download Updates... Resuming the normal flow of the application!");
+                            Log.WriteLine("Failed to download Updates... Resuming the normal flow of the application.");
                             Initialize();
                         })
                 }));
@@ -232,7 +232,7 @@ namespace SmartHunter.Core
                         },
                         () =>
                         {
-                            Log.WriteLine($"All pattern failed... Aborting!");
+                            Log.WriteLine($"All pattern failed... Aborting.");
                         }),
                     new StateMachine<State>.Transition(
                         State.WaitingForProcess,
