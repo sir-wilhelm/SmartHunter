@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
@@ -127,15 +128,29 @@ namespace SmartHunter.Core
                         () => true,
                         () =>
                         {
-                            Log.WriteLine("Restarting Application!");
-                            string update = ".\\SmartHunter_NEW.exe";
-                            string exec = Assembly.GetEntryAssembly()?.Location;
-                            if (File.Exists(update) && exec != null && File.Exists(exec))
+                            Log.WriteLine("Deleting older updates");
+                            var currentDirectory = Directory.GetCurrentDirectory();
+                            var oldFiles = Directory.GetFiles(currentDirectory, "OLD_*", SearchOption.TopDirectoryOnly);
+                            foreach (var oldFile in oldFiles)
                             {
-                                File.Move(exec, "SmartHunter_OLD.exe");
-                                File.Move(update, "SmartHunter.exe");
-                                Process.Start("SmartHunter.exe");
+                                File.Delete(oldFile);
                             }
+
+                            Log.WriteLine("Renaming files that will be replaced");
+                            using var archive = ZipFile.OpenRead("SmartHunter.zip");
+                            foreach (var entry in archive.Entries)
+                            {
+                                if (File.Exists(entry.Name))
+                                {
+                                    File.Move(entry.Name, $"OLD_{entry.Name}");
+                                }
+                            }
+
+                            Log.WriteLine("Extracting new files.");
+                            archive.ExtractToDirectory(currentDirectory);
+
+                            Log.WriteLine("Update complete, Starting new SmartHunter, and exiting");
+                            Process.Start("SmartHunter.exe");
                             Environment.Exit(1);
                         })
                }));
