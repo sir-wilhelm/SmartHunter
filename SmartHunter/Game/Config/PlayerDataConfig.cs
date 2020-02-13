@@ -116,10 +116,10 @@ namespace SmartHunter.Game.Config
 
             // Those unlocky ones are not divisible by 4 Q.Q
 
-            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_ARMORSKIN", StatusEffectConfig.MemorySource.Base, null, new MemoryConditionConfig(1, "6D8")),
-            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_MEGA_ARMORSKIN", StatusEffectConfig.MemorySource.Base, null, new MemoryConditionConfig(2, "6D8")),
-            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_DEMONDRUG", StatusEffectConfig.MemorySource.Base, null, new MemoryConditionConfig(1, "6DE")),
-            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_MEGA_DEMONDRUG", StatusEffectConfig.MemorySource.Base, null, new MemoryConditionConfig(2, "6DE")),
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_DEMONDRUG", StatusEffectConfig.MemorySource.Base, null, new MemoryConditionConfig(1, "6D8")),
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_MEGA_DEMONDRUG", StatusEffectConfig.MemorySource.Base, null, new MemoryConditionConfig(2, "6D8")),
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_ARMORSKIN", StatusEffectConfig.MemorySource.Base, null, new MemoryConditionConfig(1, "6DC")),
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_MEGA_ARMORSKIN", StatusEffectConfig.MemorySource.Base, null, new MemoryConditionConfig(2, "6DC")),
 
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_COOL_DRINK", StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(444)),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_HOT_DRINK", StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(445)),
@@ -176,9 +176,9 @@ namespace SmartHunter.Game.Config
             new StatusEffectConfig("Weapon", "LOC_WEAPON_INSECT_GLAIVE_SPEED", StatusEffectConfig.MemorySource.Weapon, "1FEC", new MemoryConditionConfig(".*rod[0-9]", "290", "3E0", "10")),
             new StatusEffectConfig("Weapon", "LOC_WEAPON_INSECT_GLAIVE_DEFENSE", StatusEffectConfig.MemorySource.Weapon, "1FF0", new MemoryConditionConfig(".*rod[0-9]", "290", "3E0", "10")),
             new StatusEffectConfig("Weapon", "LOC_WEAPON_LONGSWORD_SPIRIT_GAUGE_REGEN", StatusEffectConfig.MemorySource.Weapon, "1FF8", new MemoryConditionConfig(".*swo[0-9]", "290", "3E0", "10")),
-            */
+
             new StatusEffectConfig("Weapon", "LOC_WEAPON_LONGSWORD_STEADY_SPIRIT_LEVEL", StatusEffectConfig.MemorySource.Weapon, indexToHexStrNoOffset(2408)),//, new MemoryConditionConfig(".*swo[0-9]", "4B8", "240", "A38", "328", "DF8", "50", "4D8", "C80")),
-            /*
+
             new StatusEffectConfig("Weapon", "LOC_WEAPON_CHARGE_BLADE_SHIELD_CHARGE", StatusEffectConfig.MemorySource.Weapon, "1FF8", new MemoryConditionConfig(".*caxe[0-9]", "290", "3E0", "10")),
             new StatusEffectConfig("Weapon", "LOC_WEAPON_CHARGE_BLADE_BLADE_CHARGE", StatusEffectConfig.MemorySource.Weapon, "1FFC", new MemoryConditionConfig(".*caxe[0-9]", "290", "3E0", "10")),
             new StatusEffectConfig("Weapon", "LOC_WEAPON_SWITCH_AXE_AMPED_STATE", StatusEffectConfig.MemorySource.Weapon, "1FD4", new MemoryConditionConfig(".*saxe[0-9]", "290", "3E0", "10")),
