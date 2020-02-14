@@ -2,3 +2,4 @@ SmartHunter/bin/Debug/
 SmartHunter/bin/Release/
 obj/
 .vs/
+*.user
