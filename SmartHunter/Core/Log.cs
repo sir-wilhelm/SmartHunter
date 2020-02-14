@@ -23,7 +23,7 @@ namespace SmartHunter.Core
             {
                 try
                 {
-                    using var fileStream = new FileStream(s_FileName, FileMode.OpenOrCreate, FileSystemRights.AppendData, FileShare.Write, 4096, FileOptions.None);
+                    using var fileStream = new FileStream(s_FileName, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.Write, 4096, FileOptions.None);
                     using var streamWriter = new StreamWriter(fileStream);
                     streamWriter.AutoFlush = true;
                     streamWriter.WriteLine(line);
