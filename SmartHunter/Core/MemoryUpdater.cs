@@ -17,6 +17,7 @@ namespace SmartHunter.Core
         enum State
         {
             None,
+            DeleteOldFiles,
             CheckingForUpdates,
             DownloadingUpdates,
             Restarting,
@@ -59,6 +60,28 @@ namespace SmartHunter.Core
             m_StateMachine = new StateMachine<State>();
 
             m_StateMachine.Add(State.None, new StateMachine<State>.StateData(
+                null,
+                new StateMachine<State>.Transition[]
+                {
+                    new StateMachine<State>.Transition(
+                        State.DeleteOldFiles,
+                        () => true,
+                        () =>
+                        {
+                            var oldFiles = Directory.GetFiles(Directory.GetCurrentDirectory(), "OLD_*", SearchOption.TopDirectoryOnly);
+                            if (oldFiles.Any())
+                            {
+                                Log.WriteLine("Deleting old update files.");
+                                foreach (var oldFile in oldFiles)
+                                {
+                                    Log.WriteLine($"Deleting old file: {oldFile.Substring(oldFile.LastIndexOf('\\') + 1)}");
+                                    File.Delete(oldFile);
+                                }
+	                        }
+                        })
+                }));
+
+            m_StateMachine.Add(State.DeleteOldFiles, new StateMachine<State>.StateData(
                 null,
                 new StateMachine<State>.Transition[]
                 {
@@ -128,14 +151,6 @@ namespace SmartHunter.Core
                         () => true,
                         () =>
                         {
-                            Log.WriteLine("Deleting older updates");
-                            var currentDirectory = Directory.GetCurrentDirectory();
-                            var oldFiles = Directory.GetFiles(currentDirectory, "OLD_*", SearchOption.TopDirectoryOnly);
-                            foreach (var oldFile in oldFiles)
-                            {
-                                File.Delete(oldFile);
-                            }
-
                             Log.WriteLine("Renaming files that will be replaced");
                             using var archive = ZipFile.OpenRead("SmartHunter.zip");
                             foreach (var entry in archive.Entries)
@@ -147,7 +162,7 @@ namespace SmartHunter.Core
                             }
 
                             Log.WriteLine("Extracting new files.");
-                            archive.ExtractToDirectory(currentDirectory);
+                            archive.ExtractToDirectory(Directory.GetCurrentDirectory());
 
                             Log.WriteLine("Update complete, Starting new SmartHunter, and exiting");
                             Process.Start("SmartHunter.exe");
