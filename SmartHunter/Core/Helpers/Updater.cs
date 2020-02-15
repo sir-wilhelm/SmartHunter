@@ -20,7 +20,12 @@ namespace SmartHunter.Core.Helpers
             try
             {
                 var latestRelease = GetLatestRelease();
-                return new Version(latestRelease.tag_name) > Assembly.GetExecutingAssembly().GetName().Version;
+                var needsUpdates = new Version(latestRelease.tag_name) > Assembly.GetExecutingAssembly().GetName().Version;
+                if (!needsUpdates)
+                {
+                    Log.WriteLine("No updates found.");
+                }
+                return needsUpdates;
             }
             catch (Exception e)
             {

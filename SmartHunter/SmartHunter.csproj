@@ -29,6 +29,7 @@
   </Target>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <Reference Include="System.IO.Compression" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Ui\Fonts\Roboto-Bold.ttf" />
