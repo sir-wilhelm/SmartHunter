@@ -41,7 +41,7 @@ namespace SmartHunter.Core.Config
                 try
                 {
                     string contents = null;
-                    using (var stream = File.Open(FullPathFileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    using (var stream = new FileStream(FullPathFileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                     using (var reader = new StreamReader(stream, System.Text.Encoding.UTF8))
                     {
                         contents = reader.ReadToEnd();
@@ -103,7 +103,13 @@ namespace SmartHunter.Core.Config
 
             try
             {
-                File.WriteAllText(FullPathFileName, GetAutoGenerateedJson());
+                using var fileStream = new FileStream(FileName, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.Write, 4096, FileOptions.None);
+                using var streamWriter = new StreamWriter(fileStream)
+                {
+                    AutoFlush = true
+                };
+                streamWriter.Write(GetAutoGenerateedJson());
+
                 Log.WriteLine($"{FileName} saved");
             }
             catch (Exception ex)
