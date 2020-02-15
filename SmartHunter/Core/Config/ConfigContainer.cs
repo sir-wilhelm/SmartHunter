@@ -77,7 +77,7 @@ namespace SmartHunter.Core.Config
                     else
                     {
                         Log.WriteLine($"{FileName} will be renamed to custom_{FileName} and recreated...");
-                        Log.WriteLine("\tThis can be disabled by setting [\"UseCustomData\": true,] in Config.json.");
+                        Log.WriteLine("This can be disabled by setting [\"UseCustomData\": true,] in Config.json.");
 
                         File.Delete($"custom_{FileName}");
                         File.Move(FileName, $"custom_{FileName}");

@@ -91,7 +91,7 @@ namespace SmartHunter.Core
                         () =>
                         {
                             Log.WriteLine("Searching for updates...");
-                            Log.WriteLine("\tThis can be disabled by setting [\"AutomaticallyCheckAndDownloadUpdates\": true,] in Config.json.");
+                            Log.WriteLine("This can be disabled by setting [\"AutomaticallyCheckAndDownloadUpdates\": true,] in Config.json.");
                         }),
                     new StateMachine<State>.Transition(
                         State.WaitingForProcess,
