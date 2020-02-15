@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using SmartHunter.Config;
 using SmartHunter.Core.Config;
 using SmartHunter.Game.Config;
@@ -10,7 +10,6 @@ namespace SmartHunter.Game.Helpers
         static readonly string s_MainFileName = "Config.json";
 
         static ConfigContainer<MainConfig> s_Main;
-        static ConfigContainer<VersionsConfig> s_Versions;
         static ConfigContainer<LocalizationConfig> s_Localization;
         static ConfigContainer<MonsterDataConfig> s_MonsterData;
         static ConfigContainer<PlayerDataConfig> s_PlayerData;
@@ -27,19 +26,6 @@ namespace SmartHunter.Game.Helpers
                 }
 
                 return s_Main;
-            }
-        }
-
-        public static ConfigContainer<VersionsConfig> Versions
-        {
-            get
-            {
-                if (s_Versions == null)
-                {
-                    s_Versions = new ConfigContainer<VersionsConfig>(Main.Values.VersionsFileName);
-                }
-
-                return s_Versions;
             }
         }
 
@@ -98,17 +84,15 @@ namespace SmartHunter.Game.Helpers
         // Ensures configs are loaded
         public static void EnsureConfigs()
         {
-            var main = Main;
-            var versions = Versions;
-            var localization = Localization;
-            var monsterData = MonsterData;
-            var playerData = PlayerData;
-            var memory = Memory;
+            _ = Main;
+            _ = Localization;
+            _ = MonsterData;
+            _ = PlayerData;
+            _ = Memory;
         }
 
         static void Main_Loaded(object sender, EventArgs e)
         {
-            Versions.TryChangeFileName(Main.Values.VersionsFileName);
             Localization.TryChangeFileName(Main.Values.LocalizationFileName);
             MonsterData.TryChangeFileName(Main.Values.MonsterDataFileName);
             PlayerData.TryChangeFileName(Main.Values.PlayerDataFileName);
