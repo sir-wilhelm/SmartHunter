@@ -23,6 +23,7 @@
     </PropertyGroup>
     <Target Name="PostBuild" BeforeTargets="PostBuildEvent">
         <Exec Command="xcopy /E /Y &quot;$(ProjectDir)Ui\Resources&quot; &quot;$(TargetDir)&quot;" />
+        <Exec Command="powershell.exe -ExecutionPolicy Unrestricted -File &quot;$(ProjectDir)..\build\PackageRelease.ps1&quot; $(Configuration)" />
     </Target>
     <ItemGroup>
         <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />

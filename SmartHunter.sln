@@ -11,6 +11,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{ABF62AAC-2B01-43AB-9233-F2C3F4F746B3}"
+	ProjectSection(SolutionItems) = preProject
+		build\build.cmd = build\build.cmd
+		build\PackageRelease.ps1 = build\PackageRelease.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
