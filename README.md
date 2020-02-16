@@ -1,6 +1,6 @@
 # SmartHunter - Monster Hunter: World Overlay
 
-A complete overlay for Monster Hunter: World on PC. Distributed on [Nexus Mods](https://www.nexusmods.com/monsterhunterworld/mods/793). Features include:
+A complete overlay for Monster Hunter: World on PC with Iceborne support. Originally distributed on [Nexus Mods](https://www.nexusmods.com/monsterhunterworld/mods/793). Features include:
 
 - Monster widget - name, health, parts, status effect buildup, and crown.
 - Team widget - name and damage meters.
@@ -12,12 +12,12 @@ A complete overlay for Monster Hunter: World on PC. Distributed on [Nexus Mods](
 ## Requirements
 
 - Windows.
-- [The latest .NET Framework runtime](https://dotnet.microsoft.com/download/dotnet-framework-runtime).
+- [.NET Framework runtime](https://dotnet.microsoft.com/download/dotnet-framework) (4.6.1 is required 4.8 is recommended).
 
 ## How to install
 
-- Download `SmartHunter.exe` and `Newtonsoft.Json.dll` from here https://github.com/gabrielefilipp/SmartHunter/tree/master/SmartHunter/bin/Debug.
-- Place them in a new folder.
+- Download the latest release from [here](https://github.com/sir-wilhelm/SmartHunter/releases).
+- Extract the contents of the .
 - IMPORTANT: If you are replacing the new `.exe` in the same folder of the old SmartHunter please just follow the instructions `## How to update`.
 - You're ready for the hunt.
 
@@ -30,10 +30,14 @@ A complete overlay for Monster Hunter: World on PC. Distributed on [Nexus Mods](
 
 ## How to update
 
-- Following the commit https://github.com/gabrielefilipp/SmartHunter/commit/305b8a55eb4cd40c31a06a30ab862b4f803baa84 I've added an AutoUpdater module to this Application.
-- To enable this feature just set the key 'AutomaticallyCheckAndDownloadUpdates' to 'true', if present, otherwise just add it, to the file `Config.json`.
-- NOTE that this feature is already active if it's the first time you follow the "How to install" steps and download the mentioned files in a new directory.
-- To force an update just delete the file `Versions.json` and restart the application.
+- SmartHunter automatically checks the latest release, and if a new version is released it will auto download, extract, and clean up the old files.
+- To disable this feature set `AutomaticallyCheckAndDownloadUpdates` to `false` in `Config.json`.
+- You can always grab the latest version from the [releases](https://github.com/sir-wilhelm/SmartHunter/releases) page.
+
+# How to use custom data
+
+- To better support auto updates the .json data files are recreated by default. 
+- To change/use custom data files set `UseCustomData` to `true` in `Config.json`.
 
 ## How to create and use new localizations
 
@@ -48,13 +52,6 @@ A complete overlay for Monster Hunter: World on PC. Distributed on [Nexus Mods](
 - Make changes to the new file.
 - Ensure the new file is in the SmartHunter folder.
 - Open `Config.json` and point `SkinFileName` to the new file.
-
-## Credits
-
-- [HelloWorld](https://www.nexusmods.com/monsterhunterworld/users/58674841) for inspiring me with [their overlay](https://www.nexusmods.com/monsterhunterworld/mods/142).
-- [Material1](https://www.nexusmods.com/monsterhunterworld/users/61777036) for their efforts in finding monster sizes.
-- [hqvrrsc4](https://www.nexusmods.com/monsterhunterworld/users/7950104) for finding player data in [their overlay](https://www.nexusmods.com/monsterhunterworld/mods/88).
-- [HelloWorld](https://www.nexusmods.com/monsterhunterworld/users/58674841), [amatess2002](https://www.nexusmods.com/users/59866791), [regretofabreath](https://www.nexusmods.com/monsterhunterworld/users/57977516), and [hawk333](https://www.nexusmods.com/monsterhunterworld/users/1939230) for their efforts in indexing monster parts.
 
 ## Disclaimer
 
