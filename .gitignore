@@ -1,4 +1,6 @@
-SmartHunter/bin/Debug/
-SmartHunter/bin/Release/
+[Bb]in
+[Dd]ebug/
+[Pp]ublish/
+[Rr]elease*/
 obj/
 .vs/

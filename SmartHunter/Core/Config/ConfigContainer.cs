@@ -96,14 +96,17 @@ namespace SmartHunter.Core.Config
             Loaded?.Invoke(this, null);
         }
 
-        public void Save()
+        public void Save(bool printToLog = true)
         {
             TryPauseWatching();
 
             try
             {
                 File.WriteAllText(FullPathFileName, GetAutoGenerateedJson());
-                Log.WriteLine($"{FileName} saved");
+                if (printToLog)
+                {
+                    Log.WriteLine($"{FileName} saved");
+                }
             }
             catch (Exception ex)
             {
