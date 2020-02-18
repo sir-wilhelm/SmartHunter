@@ -16,13 +16,13 @@ namespace SmartHunter.Game.Config
         public bool ShowUnchangedStatusEffects = false;
         public float HideStatusEffectsAfterSeconds = 12f;
 
-        public bool ShowSize = true;
+        public bool ShowSize = false;
         public bool ShowCrown = true;
         public bool ShowBars = true;
         public bool ShowNumbers = true;
         public bool ShowPercents = false;
         public bool UseAnimations = false;
-        public bool ShowOnlySelectedMonster = true;
+        public bool ShowOnlySelectedMonster = false;
 
         public MonsterWidgetConfig(float x, float y) : base(x, y)
         {
