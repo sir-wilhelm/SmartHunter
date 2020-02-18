@@ -7,7 +7,7 @@
         d:DataContext="{x:Static viewModels:ConsoleViewModel.Instance}"
         mc:Ignorable="d"
         Title="SmartHunter"
-        Height="400"
+        Height="500"
         Width="1000"
         >
 

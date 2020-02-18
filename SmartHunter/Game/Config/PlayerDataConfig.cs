@@ -24,7 +24,7 @@ namespace SmartHunter.Game.Config
         public StatusEffectConfig[] StatusEffects =
         {
 
-            new StatusEffectConfig("Horn", "LOC_STATUS_EFFECT_SELF_IMPROVEMENT", (uint)(uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(14)),
+            new StatusEffectConfig("Horn", "LOC_STATUS_EFFECT_SELF_IMPROVEMENT", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(14)),
             new StatusEffectConfig("Horn", "LOC_STATUS_EFFECT_ATTACK_UP_S", (uint)StatusEffectConfig.MemorySource.Base,indexToHexStrNoOffset(15)),
             new StatusEffectConfig("Horn", "LOC_STATUS_EFFECT_ATTACK_UP_L", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(16)),
             new StatusEffectConfig("Horn", "LOC_STATUS_EFFECT_HEALTH_BOOST_S", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(17)),

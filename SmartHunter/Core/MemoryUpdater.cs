@@ -275,12 +275,12 @@ namespace SmartHunter.Core
                             var failedMemoryScans = m_MemoryScans.Where(memoryScan => !memoryScan.Results.SelectMany(result => result.Matches).Any());
                             if (failedMemoryScans.Any())
                             {
-                                string failedPatterns = String.Join(" ", failedMemoryScans.Select(failedMemoryScan => failedMemoryScan.Pattern.Config.Name));
+                                var failedPatterns = string.Join(" ", failedMemoryScans.Select(failedMemoryScan => failedMemoryScan.Pattern.Config.Name));
                                 Log.WriteLine($"Failed Patterns [{failedMemoryScans.Count()}/{m_MemoryScans.Count()}]: {failedPatterns}");
                                 Log.WriteLine($"The application will continue to work but with limited functionalities...");
                                 m_MemoryScans.RemoveAll(scan => failedMemoryScans.Contains(scan));
                             }
-                            ConfigHelper.Memory.Save(false);
+                            ConfigHelper.Memory.Save();
                             m_MemoryScans.AddRange(m_FastMemoryScans.Where(f => f.Results.Where(r => r.Matches.Any()).Any()));
                             var orderedMatches = m_MemoryScans.Select(memoryScan => memoryScan.Results.Where(result => result.Matches.Any()).First().Matches.First()).OrderBy(match => match);
                             Log.WriteLine($"Match Range: {orderedMatches.First():X} - {orderedMatches.Last():X}");
