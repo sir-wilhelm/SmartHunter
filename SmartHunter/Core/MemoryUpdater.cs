@@ -280,7 +280,7 @@ namespace SmartHunter.Core
                                 Log.WriteLine($"The application will continue to work but with limited functionalities...");
                                 m_MemoryScans.RemoveAll(scan => failedMemoryScans.Contains(scan));
                             }
-                            ConfigHelper.Memory.Save();
+                            ConfigHelper.Memory.Save(false);
                             m_MemoryScans.AddRange(m_FastMemoryScans.Where(f => f.Results.Where(r => r.Matches.Any()).Any()));
                             var orderedMatches = m_MemoryScans.Select(memoryScan => memoryScan.Results.Where(result => result.Matches.Any()).First().Matches.First()).OrderBy(match => match);
                             Log.WriteLine($"Match Range: {orderedMatches.First():X} - {orderedMatches.Last():X}");

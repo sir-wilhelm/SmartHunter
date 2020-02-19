@@ -16,7 +16,7 @@ namespace SmartHunter.Core.Config
 
         public ConfigContainer(string fileName) : base(fileName)
         {
-            bool isDesignInstance = LicenseManager.UsageMode == LicenseUsageMode.Designtime;
+            var isDesignInstance = LicenseManager.UsageMode == LicenseUsageMode.Designtime;
             if (!isDesignInstance)
             {
                 Load();
@@ -28,15 +28,12 @@ namespace SmartHunter.Core.Config
             Log.WriteException(args.ErrorContext.Error);
             args.ErrorContext.Handled = true;
         }
-        
-        override protected void OnChanged()
-        {
-            Load();
-        }
 
-        void Load()
+        protected override void OnChanged() => Load();
+
+        private void Load()
         {
-            if (File.Exists(FullPathFileName))
+            if (File.Exists(FullPathFileName) && !FileName.Equals("Memory.json"))
             {
                 try
                 {
@@ -96,14 +93,17 @@ namespace SmartHunter.Core.Config
             Loaded?.Invoke(this, null);
         }
 
-        public void Save()
+        public void Save(bool printToLog = true)
         {
             TryPauseWatching();
 
             try
             {
                 File.WriteAllText(FullPathFileName, GetAutoGenerateedJson());
-                Log.WriteLine($"{FileName} saved");
+                if (printToLog)
+                {
+                    Log.WriteLine($"{FileName} saved");
+                }
             }
             catch (Exception ex)
             {
