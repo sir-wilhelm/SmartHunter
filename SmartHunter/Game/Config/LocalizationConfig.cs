@@ -358,6 +358,7 @@ namespace SmartHunter.Config
             { "LOC_WEAPON_LONGSWORD_SPIRIT_GAUGE_REGEN_LAI_SLASH", "Spirit Gauge Regen (Lai Slash)" },
             { "LOC_WEAPON_CHARGE_BLADE_SHIELD_CHARGE", "Shield Charge" },
             { "LOC_WEAPON_CHARGE_BLADE_BLADE_CHARGE", "Blade Charge" },
+            { "LOC_WEAPON_CHARGE_BLADE_PHIAL_EXPIRES", "Phial expires" },
             { "LOC_WEAPON_SWITCH_AXE_AMPED_STATE", "Amped State" },
             { "LOC_WEAPON_HAMMER_POWER_CHARGE", "Power Charge" },
 

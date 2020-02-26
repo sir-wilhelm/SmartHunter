@@ -88,7 +88,7 @@ namespace SmartHunter.Game.Config
             new StatusEffectConfig("Coral", "LOC_STATUS_EFFECT_EARPLUGS_S", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(79)),
             new StatusEffectConfig("Coral", "LOC_STATUS_EFFECT_WIND_PRESSURE_NEGATED", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(80)),
             new StatusEffectConfig("Coral", "LOC_STATUS_EFFECT_ENVIRONMENTAL_DAMAGE_NEGATED", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(81)),
-            
+
             new StatusEffectConfig("Debuff", "LOC_STATUS_EFFECT_POISON", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(375)),
 
             new StatusEffectConfig("Debuff", "LOC_STATUS_EFFECT_FIREBLIGHT", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(379)),
@@ -116,7 +116,7 @@ namespace SmartHunter.Game.Config
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_ADAMANT_PILL", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(429), new MemoryConditionConfig(0, indexToHexStrNoOffset(430))),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_DEMON_POWDER", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(434)),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_HARDSHELL_POWDER", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(435)),
-            
+
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_DEMONDRUG", (uint)StatusEffectConfig.MemorySource.Base, null, new MemoryConditionConfig(1, indexToHexStrNoOffset(438))),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_MEGA_DEMONDRUG", (uint)StatusEffectConfig.MemorySource.Base, null, new MemoryConditionConfig(2, indexToHexStrNoOffset(438))),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_ARMORSKIN", (uint)StatusEffectConfig.MemorySource.Base, null, new MemoryConditionConfig(1, indexToHexStrNoOffset(439))),
@@ -182,10 +182,12 @@ namespace SmartHunter.Game.Config
             new StatusEffectConfig("Weapon", "LOC_WEAPON_LONGSWORD_SPIRIT_GAUGE_REGEN_LAI_SLASH", (uint)WeaponType.LONG_SWORD, indexToHexStrNoOffset(2406)),
             new StatusEffectConfig("Weapon", "LOC_WEAPON_LONGSWORD_STEADY_SPIRIT_LEVEL", (uint)WeaponType.LONG_SWORD, indexToHexStrNoOffset(2408)),
 
+            new StatusEffectConfig("Weapon", "LOC_WEAPON_CHARGE_BLADE_SHIELD_CHARGE", (uint)WeaponType.CHARGE_BLADE, indexToHexStrNoOffset(2402)),
+            new StatusEffectConfig("Weapon", "LOC_WEAPON_CHARGE_BLADE_BLADE_CHARGE", (uint)WeaponType.CHARGE_BLADE, indexToHexStrNoOffset(2403)),
+            new StatusEffectConfig("Weapon", "LOC_WEAPON_CHARGE_BLADE_PHIAL_EXPIRES", (uint)WeaponType.CHARGE_BLADE, indexToHexStrNoOffset(2464)),
+
             // Not Working
             /*
-            new StatusEffectConfig("Weapon", "LOC_WEAPON_CHARGE_BLADE_SHIELD_CHARGE", (uint)StatusEffectConfig.MemorySource.Weapon, "1FF8", WeaponType.CHARGE_BLADE),
-            new StatusEffectConfig("Weapon", "LOC_WEAPON_CHARGE_BLADE_BLADE_CHARGE", (uint)StatusEffectConfig.MemorySource.Weapon, "1FFC", WeaponType.CHARGE_BLADE),
             new StatusEffectConfig("Weapon", "LOC_WEAPON_SWITCH_AXE_AMPED_STATE", (uint)StatusEffectConfig.MemorySource.Weapon, "1FD4", WeaponType.SWITCH_AXE),
             new StatusEffectConfig("Weapon", "LOC_WEAPON_HAMMER_POWER_CHARGE", (uint)StatusEffectConfig.MemorySource.Weapon, null, WeaponType.HAMMER, new MemoryConditionConfig((byte)1, "1FC4"))
             */
