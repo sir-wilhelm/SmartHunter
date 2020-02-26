@@ -1,22 +1,14 @@
-using SmartHunter.Game.Data;
-
 namespace SmartHunter.Game.Config
 {
-    public class StatusEffectConfig
+    public partial class StatusEffectConfig
     {
-        public enum MemorySource : uint
-        {
-            Base = 1,
-            Equipment = 2
-        }
-
         public string GroupId;
         public string NameStringId;
         public string TimerOffset;
-        public uint Source;
+        public MemorySource Source;
         public MemoryConditionConfig[] Conditions;
 
-        public StatusEffectConfig(string groupId, string nameStringId, uint source, string timerOffset, params MemoryConditionConfig[] conditions)
+        public StatusEffectConfig(string groupId, string nameStringId, MemorySource source, string timerOffset, params MemoryConditionConfig[] conditions)
         {
             GroupId = groupId;
             NameStringId = nameStringId;

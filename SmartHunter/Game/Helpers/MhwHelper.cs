@@ -177,22 +177,22 @@ namespace SmartHunter.Game.Helpers
                 var statusEffectConfig = ConfigHelper.PlayerData.Values.StatusEffects[index];
 
                 ulong sourceAddress = baseAddress;
-                if (statusEffectConfig.Source == (uint)StatusEffectConfig.MemorySource.Equipment)
+                if (statusEffectConfig.Source == MemorySource.Equipment)
                 {
                     sourceAddress = equipmentAddress;
                 }
-                else if (statusEffectConfig.Source != (uint)StatusEffectConfig.MemorySource.Base)
+                else if (statusEffectConfig.Source != MemorySource.Base)
                 {
                     sourceAddress = weaponAddress;
                 }
                 
-                bool allConditionsPassed = true;
+                var allConditionsPassed = true;
                 if (statusEffectConfig.Conditions != null)
                 {
                     foreach (var condition in statusEffectConfig.Conditions)
                     {
-                        bool isOffsetChainValid = true;
-                        List<long> offsets = new List<long>();
+                        var isOffsetChainValid = true;
+                        var offsets = new List<long>();
                         foreach (var offsetString in condition.Offsets)
                         {
                             if (TryParseHex(offsetString, out var offset))
@@ -214,7 +214,7 @@ namespace SmartHunter.Game.Helpers
 
                         var conditionAddress = MemoryHelper.ReadMultiLevelPointer(false, process, sourceAddress + (ulong)offsets.First(), offsets.Skip(1).ToArray());
 
-                        bool isPassed = false;
+                        var isPassed = false;
                         if (condition.ByteValue.HasValue)
                         {
                             var conditionValue = MemoryHelper.Read<byte>(process, conditionAddress);
@@ -238,7 +238,7 @@ namespace SmartHunter.Game.Helpers
                         }
                     }
                 }
-                if (statusEffectConfig.Source != (uint)StatusEffectConfig.MemorySource.Base && statusEffectConfig.Source != (uint)StatusEffectConfig.MemorySource.Equipment)
+                if (statusEffectConfig.Source != MemorySource.Base && statusEffectConfig.Source != MemorySource.Equipment)
                 {
                     if (!OverlayViewModel.Instance.DebugWidget.Context.CurrentGame.IsValid)
                     {
