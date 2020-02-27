@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
@@ -176,15 +177,13 @@ namespace SmartHunter.Game.Helpers
             {
                 var statusEffectConfig = ConfigHelper.PlayerData.Values.StatusEffects[index];
 
-                ulong sourceAddress = baseAddress;
-                if (statusEffectConfig.Source == MemorySource.Equipment)
+                var sourceAddress = statusEffectConfig.Source switch
                 {
-                    sourceAddress = equipmentAddress;
-                }
-                else if (statusEffectConfig.Source != MemorySource.Base)
-                {
-                    sourceAddress = weaponAddress;
-                }
+                    MemorySource.Base => baseAddress,
+                    MemorySource.Equipment => equipmentAddress,
+                    MemorySource.Weapon => weaponAddress,
+                    _ => baseAddress,
+                };
                 
                 var allConditionsPassed = true;
                 if (statusEffectConfig.Conditions != null)
@@ -238,17 +237,19 @@ namespace SmartHunter.Game.Helpers
                         }
                     }
                 }
-                if (statusEffectConfig.Source != MemorySource.Base && statusEffectConfig.Source != MemorySource.Equipment)
+
+                if (statusEffectConfig.Source == MemorySource.Weapon)
                 {
                     if (!OverlayViewModel.Instance.DebugWidget.Context.CurrentGame.IsValid)
                     {
                         continue;
                     }
-                    if (OverlayViewModel.Instance.DebugWidget.Context.CurrentGame.CurrentEquippedWeaponType() != (WeaponType)statusEffectConfig.Source)
+                    if (OverlayViewModel.Instance.DebugWidget.Context.CurrentGame.CurrentEquippedWeaponType() != statusEffectConfig.WeaponType)
                     {
                         allConditionsPassed = false;
                     }
                 }
+
                 float? timer = null;
                 if (allConditionsPassed && statusEffectConfig.TimerOffset != null)
                 {

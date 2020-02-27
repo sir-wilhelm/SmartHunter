@@ -178,13 +178,15 @@ namespace SmartHunter.Game.Config
             */
             // Working
 
-            new StatusEffectConfig("Weapon", "LOC_WEAPON_LONGSWORD_SPIRIT_GAUGE_REGEN_HELM_BREAKER", MemorySource.Weapon, indexToHexStrNoOffset(2402)),
-            new StatusEffectConfig("Weapon", "LOC_WEAPON_LONGSWORD_SPIRIT_GAUGE_REGEN_LAI_SLASH", MemorySource.Weapon, indexToHexStrNoOffset(2406)),
-            new StatusEffectConfig("Weapon", "LOC_WEAPON_LONGSWORD_STEADY_SPIRIT_LEVEL", MemorySource.Weapon, indexToHexStrNoOffset(2408)),
+            // are these even working?
+            new StatusEffectConfig("Weapon", "LOC_WEAPON_LONGSWORD_SPIRIT_GAUGE_REGEN_HELM_BREAKER", MemorySource.Weapon, indexToHexStrNoOffset(2402), WeaponType.LONG_SWORD),
+            new StatusEffectConfig("Weapon", "LOC_WEAPON_LONGSWORD_SPIRIT_GAUGE_REGEN_LAI_SLASH", MemorySource.Weapon, indexToHexStrNoOffset(2406), WeaponType.LONG_SWORD),
+            new StatusEffectConfig("Weapon", "LOC_WEAPON_LONGSWORD_STEADY_SPIRIT_LEVEL", MemorySource.Weapon, indexToHexStrNoOffset(2408), WeaponType.LONG_SWORD),
 
-            new StatusEffectConfig("Weapon", "LOC_WEAPON_CHARGE_BLADE_SHIELD_CHARGE", MemorySource.Weapon, indexToHexStrNoOffset(2402)),
-            new StatusEffectConfig("Weapon", "LOC_WEAPON_CHARGE_BLADE_BLADE_CHARGE", MemorySource.Weapon, indexToHexStrNoOffset(2403)),
-            new StatusEffectConfig("Weapon", "LOC_WEAPON_CHARGE_BLADE_PHIAL_EXPIRES", MemorySource.Weapon, indexToHexStrNoOffset(2464)),
+            // not actually working
+            new StatusEffectConfig("Weapon", "LOC_WEAPON_CHARGE_BLADE_SHIELD_CHARGE", MemorySource.Weapon, indexToHexStrNoOffset(2402), WeaponType.CHARGE_BLADE),
+            new StatusEffectConfig("Weapon", "LOC_WEAPON_CHARGE_BLADE_BLADE_CHARGE", MemorySource.Weapon, indexToHexStrNoOffset(2403), WeaponType.CHARGE_BLADE),
+            new StatusEffectConfig("Weapon", "LOC_WEAPON_CHARGE_BLADE_PHIAL_EXPIRES", MemorySource.Weapon, indexToHexStrNoOffset(2464), WeaponType.CHARGE_BLADE),
 
             // Not Working
             /*
