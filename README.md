@@ -56,7 +56,7 @@ A complete overlay for Monster Hunter: World on PC with Iceborne support. Origin
 # FAQ
 
 Can I configure what is visible?
-Yes - see `Config.json` documentation [here](/doc/Configure.json.md).
+Yes - see `Config.json` documentation [here](/doc/Config.json.md).
 
 Why don't monster parts and status effects update properly in multiplayer sessions?
 This data only updates properly for the quest host. This is just the way the game works and it can't be worked around.

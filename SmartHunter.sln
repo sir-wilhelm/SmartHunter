@@ -8,6 +8,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2A20B067-F085-4EB5-8667-7E708ACE5755}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		LICENSE.txt = LICENSE.txt
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -15,6 +17,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{ABF62AAC
 	ProjectSection(SolutionItems) = preProject
 		build\build.cmd = build\build.cmd
 		build\PackageRelease.ps1 = build\PackageRelease.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{AC741825-8381-4958-A594-773ED0E868FF}"
+	ProjectSection(SolutionItems) = preProject
+		doc\Config.json.md = doc\Config.json.md
 	EndProjectSection
 EndProject
 Global

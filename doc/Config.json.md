@@ -1,6 +1,6 @@
-# `Configure.json` documentation
+# `Config.json` documentation
 
-SmartHunter can be customized from the `Configure.json` file (generated after first launch).
+SmartHunter can be customized from the `Config.json` file (generated after first launch).
 Blelow are common settings that people might want to change.
 
 ## Global configurations
@@ -42,7 +42,7 @@ Availalbe options: Horn, Coral, Debuff, Buff, Equipment, and Weapon
 `"IsVisible": true,`
 defaults to `true`, set to `false` to disable.
 
-# Example
+# Example Config.json file
 ```json
 {
   "LocalizationFileName": "en-US.json",
