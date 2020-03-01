@@ -49,7 +49,7 @@ namespace SmartHunter.Game.Data.WidgetContexts
 
         public Player UpdateAndGetPlayer(int index, string name, int damage)
         {
-            if (String.IsNullOrEmpty(name) && damage == 0)
+            if (string.IsNullOrEmpty(name) && damage == 0)
             {
                 if (index < Players.Count)
                 {
@@ -80,12 +80,12 @@ namespace SmartHunter.Game.Data.WidgetContexts
                 }
             }
 
-            Player player = Players[index];
-            if (!String.IsNullOrEmpty(name))
+            var player = Players[index];
+            if (!string.IsNullOrEmpty(name))
             {
                 player.Name = name;
             }
-            else if (String.IsNullOrEmpty(player.Name))
+            else if (string.IsNullOrEmpty(player.Name))
             {
                 player.Name = LocalizationHelper.GetString(LocalizationHelper.UnknownPlayerStringId);
             }

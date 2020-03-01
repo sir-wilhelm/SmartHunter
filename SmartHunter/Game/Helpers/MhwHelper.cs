@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
@@ -271,18 +270,18 @@ namespace SmartHunter.Game.Helpers
 
         public static void UpdateTeamWidget(Process process, ulong playerDamageCollectionAddress, ulong playerNameCollectionAddress)
         {
-            List<Player> updatedPlayers = new List<Player>();
+            var players = new List<Player>();
 
-            for (int playerIndex = 0; playerIndex < DataOffsets.PlayerDamageCollection.MaxPlayerCount; ++playerIndex)
+            for (var playerIndex = 0; playerIndex < DataOffsets.PlayerDamageCollection.MaxPlayerCount; ++playerIndex)
             {
                 var player = UpdateAndGetTeamPlayer(process, playerIndex, playerDamageCollectionAddress, playerNameCollectionAddress);
                 if (player != null)
                 {
-                    updatedPlayers.Add(player);
+                    players.Add(player);
                 }
             }
 
-            if (updatedPlayers.Any())
+            if (players.Any())
             {
                 OverlayViewModel.Instance.TeamWidget.Context.UpdateFractions();
             }
@@ -294,21 +293,16 @@ namespace SmartHunter.Game.Helpers
 
         private static Player UpdateAndGetTeamPlayer(Process process, int playerIndex, ulong playerDamageCollectionAddress, ulong playerNameCollectionAddress)
         {
-            Player player = null;
-
             var playerNameOffset = (ulong)DataOffsets.PlayerNameCollection.PlayerNameLength * (ulong)playerIndex;
-            string name = MemoryHelper.ReadString(process, playerNameCollectionAddress + DataOffsets.PlayerNameCollection.FirstPlayerName + playerNameOffset, (uint)DataOffsets.PlayerNameCollection.PlayerNameLength);
-            ulong firstPlayerPtr = playerDamageCollectionAddress + DataOffsets.PlayerDamageCollection.FirstPlayerPtr;
-            ulong currentPlayerPtr = firstPlayerPtr + ((ulong)playerIndex * DataOffsets.PlayerDamageCollection.NextPlayerPtr);
-            ulong currentPlayerAddress = MemoryHelper.Read<ulong>(process, currentPlayerPtr);
-            int damage = MemoryHelper.Read<int>(process, currentPlayerAddress + DataOffsets.PlayerDamage.Damage);
+            var name = MemoryHelper.ReadString(process, playerNameCollectionAddress + DataOffsets.PlayerNameCollection.FirstPlayerName + playerNameOffset, (uint)DataOffsets.PlayerNameCollection.PlayerNameLength);
+            var firstPlayerPtr = playerDamageCollectionAddress + DataOffsets.PlayerDamageCollection.FirstPlayerPtr;
+            var currentPlayerPtr = firstPlayerPtr + ((ulong)playerIndex * DataOffsets.PlayerDamageCollection.NextPlayerPtr);
+            var currentPlayerAddress = MemoryHelper.Read<ulong>(process, currentPlayerPtr);
+            var damage = MemoryHelper.Read<int>(process, currentPlayerAddress + DataOffsets.PlayerDamage.Damage);
 
-            if (!String.IsNullOrEmpty(name) || damage > 0)
-            {
-                player = OverlayViewModel.Instance.TeamWidget.Context.UpdateAndGetPlayer(playerIndex, name, damage);
-            }
-
-            return player;
+            return !string.IsNullOrEmpty(name) && damage > 0
+                ? OverlayViewModel.Instance.TeamWidget.Context.UpdateAndGetPlayer(playerIndex, name, damage)
+                : null;
         }
 
         public static void UpdateMonsterWidget(Process process, ulong monsterBaseList, ulong mapBaseAddress)
