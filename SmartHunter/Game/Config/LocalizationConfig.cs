@@ -266,6 +266,7 @@ namespace SmartHunter.Config
             { "LOC_STATUS_EFFECT_ABNORMAL_STATUS_ATTACK_INCREASED", "Abnormal Status Atk. Increased" },
             
             // Orchestra
+            { "LOC_STATUS_EFFECT_RESUSCITATE", "Resuscitate" },
             { "LOC_STATUS_EFFECT_HEALTH_RECOVERY", "Health Recovery" },
             { "LOC_STATUS_EFFECT_HEALTH_BOOST", "Health Boost" },
             { "LOC_STATUS_EFFECT_STAMINA_USE_REDUCED", "Stamina Use Reduced" },
