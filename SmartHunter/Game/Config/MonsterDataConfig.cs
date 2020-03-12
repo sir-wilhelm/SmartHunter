@@ -479,6 +479,16 @@ namespace SmartHunter.Game.Config
                     new MonsterCrownConfig(CrownPreset.Standard)
                 )
             },
+            {
+                "em057_01",
+                new MonsterConfig("LOC_MONSTER_STYGIAN_ZINOGRE",
+                    new MonsterPartConfig[]
+                    {
+                    },
+                    1743.49f,
+                    new MonsterCrownConfig(CrownPreset.Alternate)
+                )
+            },
             { // true
                 "em080_00",
                 new MonsterConfig("LOC_MONSTER_GLAVENUS",
@@ -643,6 +653,16 @@ namespace SmartHunter.Game.Config
                     1848.12f,
                     new MonsterCrownConfig(CrownPreset.Standard),
                     true
+                )
+            },
+            {
+                "em104_00",
+                new MonsterConfig("LOC_MONSTER_SAFI_JIIVA",
+                    new MonsterPartConfig[]
+                    {
+                    },
+                    4799.78f,
+                    new MonsterCrownConfig(CrownPreset.Alternate)
                 )
             },
             { // true
