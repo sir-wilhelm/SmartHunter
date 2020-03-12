@@ -175,24 +175,18 @@ namespace SmartHunter.Game.Config
 
             // Not working
             /*
-            new StatusEffectConfig("Weapon", "LOC_WEAPON_INSECT_GLAIVE_ATTACK", MemorySource.Weapon, "1FE8", WeaponType.INSECT_GLAIVE),
-            new StatusEffectConfig("Weapon", "LOC_WEAPON_INSECT_GLAIVE_SPEED", MemorySource.Weapon, "1FEC", WeaponType.INSECT_GLAIVE),
-            new StatusEffectConfig("Weapon", "LOC_WEAPON_INSECT_GLAIVE_DEFENSE", MemorySource.Weapon, "1FF0", WeaponType.INSECT_GLAIVE),
-            */
-            // Working
-
-            // sometimes working?
             new StatusEffectConfig("Weapon", "LOC_WEAPON_LONGSWORD_SPIRIT_GAUGE_REGEN_HELM_BREAKER", MemorySource.Weapon, indexToHexStrNoOffset(2402), WeaponType.LONG_SWORD),
             new StatusEffectConfig("Weapon", "LOC_WEAPON_LONGSWORD_SPIRIT_GAUGE_REGEN_LAI_SLASH", MemorySource.Weapon, indexToHexStrNoOffset(2406), WeaponType.LONG_SWORD),
             new StatusEffectConfig("Weapon", "LOC_WEAPON_LONGSWORD_STEADY_SPIRIT_LEVEL", MemorySource.Weapon, indexToHexStrNoOffset(2408), WeaponType.LONG_SWORD),
 
-            // sometimes working
             new StatusEffectConfig("Weapon", "LOC_WEAPON_CHARGE_BLADE_SHIELD_CHARGE", MemorySource.Weapon, indexToHexStrNoOffset(2402), WeaponType.CHARGE_BLADE),
             new StatusEffectConfig("Weapon", "LOC_WEAPON_CHARGE_BLADE_BLADE_CHARGE", MemorySource.Weapon, indexToHexStrNoOffset(2403), WeaponType.CHARGE_BLADE),
             new StatusEffectConfig("Weapon", "LOC_WEAPON_CHARGE_BLADE_PHIAL_EXPIRES", MemorySource.Weapon, indexToHexStrNoOffset(2464), WeaponType.CHARGE_BLADE),
 
-            // Not Working
-            /*
+            new StatusEffectConfig("Weapon", "LOC_WEAPON_INSECT_GLAIVE_ATTACK", MemorySource.Weapon, "1FE8", WeaponType.INSECT_GLAIVE),
+            new StatusEffectConfig("Weapon", "LOC_WEAPON_INSECT_GLAIVE_SPEED", MemorySource.Weapon, "1FEC", WeaponType.INSECT_GLAIVE),
+            new StatusEffectConfig("Weapon", "LOC_WEAPON_INSECT_GLAIVE_DEFENSE", MemorySource.Weapon, "1FF0", WeaponType.INSECT_GLAIVE),
+
             new StatusEffectConfig("Weapon", "LOC_WEAPON_SWITCH_AXE_AMPED_STATE", MemorySource.Weapon, "1FD4", WeaponType.SWITCH_AXE),
             new StatusEffectConfig("Weapon", "LOC_WEAPON_HAMMER_POWER_CHARGE", MemorySource.Weapon, null, WeaponType.HAMMER, new MemoryConditionConfig((byte)1, "1FC4"))
             */
