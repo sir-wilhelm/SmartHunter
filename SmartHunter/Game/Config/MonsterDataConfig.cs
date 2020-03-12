@@ -484,6 +484,13 @@ namespace SmartHunter.Game.Config
                 new MonsterConfig("LOC_MONSTER_STYGIAN_ZINOGRE",
                     new MonsterPartConfig[]
                     {
+                        new MonsterPartConfig("Removable", "LOC_REMOVABLE_PART_TAIL", true),
+                        new MonsterPartConfig("Part", "LOC_PART_HEAD"),
+                        new MonsterPartConfig("Part", "LOC_PART_BODY"),
+                        new MonsterPartConfig("Part", "LOC_PART_BACK"),
+                        new MonsterPartConfig("Part", "LOC_PART_ARMS"),
+                        new MonsterPartConfig("Part", "LOC_PART_LEGS"),
+                        new MonsterPartConfig("Part", "LOC_PART_TAIL")
                     },
                     1743.49f,
                     new MonsterCrownConfig(CrownPreset.Alternate)
