@@ -413,22 +413,9 @@ namespace SmartHunter.Game.Helpers
                     {
                         UpdateMonsterRemovableParts(process, monster);
                     }
-                    //UpdateMonsterStatusEffects(process, monster);
-
-                    if (OverlayViewModel.Instance.DebugWidget.Context.CurrentGame.IsValid && OverlayViewModel.Instance.DebugWidget.Context.CurrentGame.IsPlayerOnline() && !OverlayViewModel.Instance.DebugWidget.Context.CurrentGame.IsPlayerAlone())
-                    {
-                        // Upload DATA to central server
-                    }
-                }
-                else
-                {
-                    if (OverlayViewModel.Instance.DebugWidget.Context.CurrentGame.IsValid && OverlayViewModel.Instance.DebugWidget.Context.CurrentGame.IsPlayerOnline())
-                    {
-                        // Downlaod DATA from central server
-                    }
                 }
 
-                UpdateMonsterStatusEffects(process, monster); // TODO: Remove
+                UpdateMonsterStatusEffects(process, monster);
             }
 
             return monster;
