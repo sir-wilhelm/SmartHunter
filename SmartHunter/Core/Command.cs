@@ -3,6 +3,7 @@ using System.Windows.Input;
 
 namespace SmartHunter.Core
 {
+    #pragma warning disable 67
     public class Command : ICommand
     {
         private readonly Action<object> _action;
