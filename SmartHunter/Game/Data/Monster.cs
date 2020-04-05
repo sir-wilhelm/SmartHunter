@@ -59,7 +59,7 @@ namespace SmartHunter.Game.Data
             }
         }
 
-        public float ModifiedSizeScale => SizeScale / ScaleModifier;
+        public float ModifiedSizeScale => (float)Math.Round((decimal)(SizeScale / ScaleModifier), 2);
 
         public float Size => ConfigHelper.MonsterData.Values.Monsters.TryGetValue(Id, out var config) ? config.BaseSize * ModifiedSizeScale : 0;
 
