@@ -7,14 +7,6 @@ using SmartHunter.Game.Helpers;
 
 namespace SmartHunter.Game.Data
 {
-    public enum MonsterCrown
-    {
-        None,
-        Mini,
-        Silver,
-        Gold
-    }
-
     public class Monster : TimedVisibility
     {
         public ulong Address { get; private set; }
@@ -53,7 +45,6 @@ namespace SmartHunter.Game.Data
         }
 
         float m_ScaleModifier;
-
         public float ScaleModifier
         {
             get => m_ScaleModifier;
