@@ -594,12 +594,12 @@
             <DockPanel>
                 <Grid>
                     <TextBlock x:Name="NameBlockShadow" Text="{Binding Name}" Style="{StaticResource A_Style_TextBlock_Standard}" Foreground="{StaticResource A_Brush_DropShadow}" RenderTransform="{StaticResource A_Transform_DropShadow}" />
-                    <TextBlock x:Name="NameBlock" Text="{Binding Name}" Style="{StaticResource A_Style_TextBlock_Standard}" />
+                    <TextBlock x:Name="NameBlock" Text="{Binding Name}" Foreground="{Binding Health.Color}" Style="{StaticResource A_Style_TextBlock_Standard}" />
                 </Grid>
 
                 <ContentControl x:Name="TimesBrokenGraphic" Visibility="Collapsed" Margin="6 -3 0 0" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" ContentTemplate="{StaticResource A_DataTemplate_SquareInfoGraphic}">
                     <ContentControl.Background>
-                        <SolidColorBrush Color="{Binding Source={StaticResource A_Color_Monster_Part_Bar}}" />
+                        <SolidColorBrush Color="{Binding Health.Color}" />
                     </ContentControl.Background>
                     <MultiBinding ConverterParameter="{}{0}" Converter="{StaticResource A_Converter_StringFormat}">
                         <Binding Path="TimesBrokenCount" Mode="OneWay" />
@@ -631,7 +631,7 @@
 
             <ContentControl x:Name="Bar" Content="{Binding Health.Fraction}" ContentTemplate="{StaticResource A_DataTemplate_BarProgress}" Height="3" Margin="0 2 0 0">
                 <ContentControl.Foreground>
-                    <SolidColorBrush Color="{StaticResource A_Color_Monster_Part_Bar}" />
+                    <SolidColorBrush Color="{Binding Health.Color}" />
                 </ContentControl.Foreground>
             </ContentControl>
         </StackPanel>
@@ -795,7 +795,7 @@
                     <!--/Size-->
                     <Grid VerticalAlignment="Bottom">
                         <TextBlock Text="{Binding Name}" Style="{StaticResource A_Style_TextBlock_Heading}" Foreground="{StaticResource A_Brush_DropShadow}" RenderTransform="{StaticResource A_Transform_DropShadow}" />
-                        <TextBlock Text="{Binding Name}" Style="{StaticResource A_Style_TextBlock_Heading}" />
+                        <TextBlock Text="{Binding Name}" Foreground="{Binding Health.Color}" Style="{StaticResource A_Style_TextBlock_Heading}" />
 
                     </Grid>
                 </StackPanel>
@@ -803,7 +803,7 @@
                 <Grid Margin="0 2 0 0">
                     <ContentControl x:Name="HealthBar" Content="{Binding Health.Fraction}" ContentTemplate="{StaticResource A_DataTemplate_BarProgress}" Height="20">
                         <ContentControl.Foreground>
-                            <SolidColorBrush Color="{StaticResource A_Color_Monster_Bar}" />
+                            <SolidColorBrush Color="{Binding Health.Color}" />
                         </ContentControl.Foreground>
                     </ContentControl>
 
