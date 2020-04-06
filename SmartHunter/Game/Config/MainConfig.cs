@@ -22,7 +22,8 @@ namespace SmartHunter.Game.Config
         public Dictionary<InputControl, Key> Keybinds = new Dictionary<InputControl, Key>()
         {
             { InputControl.ManipulateWidget, Key.LeftAlt },
-            { InputControl.HideWidgets, Key.F1 }
+            { InputControl.HideWidgets, Key.F1 },
+            { InputControl.ToggleWidgests, Key.RightCtrl },
         };
 
         public DebugConfig Debug = new DebugConfig();

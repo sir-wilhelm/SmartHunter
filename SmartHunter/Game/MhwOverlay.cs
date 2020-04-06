@@ -1,4 +1,6 @@
-﻿using System.Linq;
+using System;
+using System.Diagnostics;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using SmartHunter.Core;
@@ -12,6 +14,7 @@ namespace SmartHunter.Game
     public class MhwOverlay : Overlay
     {
         private readonly MhwMemoryUpdater _memoryUpdater;
+        private readonly Stopwatch _stopwatch;
 
         public MhwOverlay(Window mainWindow, params WidgetWindow[] widgetWindows) : base(mainWindow, widgetWindows)
         {
@@ -20,6 +23,8 @@ namespace SmartHunter.Game
             ConfigHelper.MonsterData.Loaded += (s, e) => { RefreshWidgetsLayout(); };
             ConfigHelper.PlayerData.Loaded += (s, e) => { RefreshWidgetsLayout(); };
             _memoryUpdater = !ConfigHelper.Main.Values.Debug.UseSampleData ? _memoryUpdater = new MhwMemoryUpdater() : null;
+            _stopwatch = new Stopwatch();
+            _stopwatch.Start();
         }
 
         protected override void InputReceived(Key key, bool isDown)
@@ -68,6 +73,14 @@ namespace SmartHunter.Game
             else if (control == InputControl.HideWidgets)
             {
                 OverlayViewModel.Instance.HideWidgetsRequested = isDown;
+            }
+            else if (control == InputControl.ToggleWidgests)
+            {
+                if (_stopwatch.Elapsed < TimeSpan.FromSeconds(2))
+                    return;
+
+                OverlayViewModel.Instance.HideWidgetsRequested = !OverlayViewModel.Instance.HideWidgetsRequested;
+                _stopwatch.Restart();
             }
         }
     }

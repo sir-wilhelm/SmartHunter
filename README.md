@@ -26,6 +26,9 @@ A complete overlay for Monster Hunter: World on PC with Iceborne support. Origin
 - Hold `LeftAlt` to view widget locations.
 - Click and drag widgets to move them.
 - Use the mouse wheel scroll over widgets to rescale them.
+- Other modifiers:
+    - Press and hold `F1` to hide all widgets.
+    - Press `RightCtrl` to toggle widget visibility.
 
 ### How to update
 
