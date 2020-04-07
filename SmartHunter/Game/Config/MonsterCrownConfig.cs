@@ -29,7 +29,7 @@ namespace SmartHunter.Game.Config
                     break;
                 case CrownPreset.Rajang:
                     Mini = 0.9f;
-                    Silver = 1.12f;
+                    Silver = 1.11f;
                     Gold = 1.18f;
                     break;
                 default:
