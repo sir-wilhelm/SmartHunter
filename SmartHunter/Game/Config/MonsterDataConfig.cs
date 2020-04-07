@@ -493,7 +493,7 @@ namespace SmartHunter.Game.Config
                         new MonsterPartConfig("Part", "LOC_PART_TAIL")
                     },
                     1743.49f,
-                    new MonsterCrownConfig(CrownPreset.Alternate)
+                    new MonsterCrownConfig(CrownPreset.Standard)
                 )
             },
             { // true
@@ -682,7 +682,7 @@ namespace SmartHunter.Game.Config
                         new MonsterPartConfig("Part", "LOC_PART_TAIL"),
                     },
                     4799.78f,
-                    new MonsterCrownConfig(CrownPreset.Alternate)
+                    new MonsterCrownConfig(CrownPreset.Standard)
                 )
             },
             { // true
