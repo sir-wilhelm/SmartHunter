@@ -4,9 +4,9 @@ namespace SmartHunter.Game.Config
 {
     public class MonsterCrownConfig
     {
-        public readonly float Mini;
-        public readonly float Silver;
-        public readonly float Gold;
+        public float Mini;
+        public float Silver;
+        public float Gold;
 
         public MonsterCrownConfig(CrownPreset crownPreset)
         {
