@@ -222,6 +222,25 @@ namespace SmartHunter.Game.Config
                     new MonsterCrownConfig(CrownPreset.Rajang)
                 )
             },
+            {
+                "em023_05",
+                new MonsterConfig("LOC_MONSTER_FURIOUS_RAJANG",
+                    new MonsterPartConfig[]
+                    {
+                        new MonsterPartConfig("Removable", "LOC_REMOVABLE_PART_HORNS", true),
+                        new MonsterPartConfig("Removable", "LOC_REMOVABLE_PART_TAIL", true),
+                        new MonsterPartConfig("Part", "LOC_PART_HEAD"),
+                        new MonsterPartConfig("Part", "LOC_PART_BODY"),
+                        new MonsterPartConfig("Part", "LOC_PART_ARM_LEFT"),
+                        new MonsterPartConfig("Part", "LOC_PART_ARM_RIGHT"),
+                        new MonsterPartConfig("Part", "LOC_PART_LEG_LEFT"),
+                        new MonsterPartConfig("Part", "LOC_PART_LEG_RIGHT"),
+                        new MonsterPartConfig("Part", "LOC_PART_TAIL")
+                    },
+                    829.11f,
+                    new MonsterCrownConfig(CrownPreset.Rajang)
+                )
+            },
             { // true
                 "em024_00",
                 new MonsterConfig("LOC_MONSTER_KUSHALA_DAORA",
@@ -476,6 +495,24 @@ namespace SmartHunter.Game.Config
                         new MonsterPartConfig("Part", "LOC_PART_TAIL")
                     },
                     1630.55f,
+                    new MonsterCrownConfig(CrownPreset.Standard)
+                )
+            },
+            {
+                "em063_05",
+                new MonsterConfig("LOC_MONSTER_RAGING_BRACHYDIOS",
+                    new MonsterPartConfig[]
+                    {
+                        new MonsterPartConfig("Removable", "LOC_REMOVABLE_PART_TAIL", true),
+                        new MonsterPartConfig("Part", "LOC_PART_HEAD"),
+                        new MonsterPartConfig("Part", "LOC_PART_BODY"),
+                        new MonsterPartConfig("Part", "LOC_PART_ARM_LEFT"),
+                        new MonsterPartConfig("Part", "LOC_PART_ARM_RIGHT"),
+                        new MonsterPartConfig("Part", "LOC_PART_LEG_LEFT"),
+                        new MonsterPartConfig("Part", "LOC_PART_LEG_RIGHT"),
+                        new MonsterPartConfig("Part", "LOC_PART_TAIL")
+                    },
+                    2282.77f,
                     new MonsterCrownConfig(CrownPreset.Standard)
                 )
             },

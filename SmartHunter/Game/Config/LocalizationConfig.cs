@@ -28,6 +28,7 @@ namespace SmartHunter.Config
             { "LOC_MONSTER_ANJANATH_FULGUR", "Fulgur Anjanath" },
             { "LOC_MONSTER_PUKEI_PUKEI_CORAL", "Coral Pukei-Pukei" },
             { "LOC_MONSTER_BRACHYDIOS", "Brachydios" },
+            { "LOC_MONSTER_RAGING_BRACHYDIOS", "Raging Brachydios" },
             { "LOC_MONSTER_VELKHANA", "Velkhana" },
             { "LOC_MONSTER_BEOTODUS", "Beotodus" },
             { "LOC_MONSTER_GLAVENUS", "Glavenus" },
@@ -44,6 +45,7 @@ namespace SmartHunter.Config
             { "LOC_MONSTER_GOLD_RATHIAN", "Gold Rathian" },
             { "LOC_MONSTER_SILVER_RATHALOS", "Silver Rathalos" },
             { "LOC_MONSTER_RAJANG", "Rajang" },
+            { "LOC_MONSTER_FURIOUS_RAJANG", "Furious Rajang" },
             { "LOC_MONSTER_STYGIAN_ZINOGRE", "Stygian Zinogre" },
             { "LOC_MONSTER_SAFI_JIIVA", "Safi'jiiva" },
 
