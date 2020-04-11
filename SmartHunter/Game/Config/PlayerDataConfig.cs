@@ -119,9 +119,10 @@ namespace SmartHunter.Game.Config
             //broken
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_MIGHT_SEED", MemorySource.Base, indexToHexStrNoOffset(425), new MemoryConditionConfig(0, indexToHexStrNoOffset(427))),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_MIGHT_PILL", MemorySource.Base, indexToHexStrNoOffset(425), new MemoryConditionConfig(1, indexToHexStrNoOffset(427))),
-            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_ADAMANT_SEED", MemorySource.Base, indexToHexStrNoOffset(429), new MemoryConditionConfig(20, indexToHexStrNoOffset(430))),
-            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_ADAMANT_PILL", MemorySource.Base, indexToHexStrNoOffset(429), new MemoryConditionConfig(0, indexToHexStrNoOffset(430))),
             //end broken
+
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_ADAMANT_SEED", MemorySource.Base, indexToHexStrNoOffset(428), new MemoryConditionConfig(20, indexToHexStrNoOffset(429))),
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_ADAMANT_PILL", MemorySource.Base, indexToHexStrNoOffset(428), new MemoryConditionConfig(0, indexToHexStrNoOffset(429))),
 
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_DEMONDRUG", MemorySource.Base, null, new MemoryConditionConfig(1, indexToHexStrNoOffset(437))),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_MEGA_DEMONDRUG", MemorySource.Base, null, new MemoryConditionConfig(2, indexToHexStrNoOffset(437))),
