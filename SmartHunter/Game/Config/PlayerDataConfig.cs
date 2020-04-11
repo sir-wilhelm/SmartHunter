@@ -121,12 +121,12 @@ namespace SmartHunter.Game.Config
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_MIGHT_PILL", MemorySource.Base, indexToHexStrNoOffset(425), new MemoryConditionConfig(1, indexToHexStrNoOffset(427))),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_ADAMANT_SEED", MemorySource.Base, indexToHexStrNoOffset(429), new MemoryConditionConfig(20, indexToHexStrNoOffset(430))),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_ADAMANT_PILL", MemorySource.Base, indexToHexStrNoOffset(429), new MemoryConditionConfig(0, indexToHexStrNoOffset(430))),
-
-            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_DEMONDRUG", MemorySource.Base, null, new MemoryConditionConfig(1, indexToHexStrNoOffset(438))),
-            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_MEGA_DEMONDRUG", MemorySource.Base, null, new MemoryConditionConfig(2, indexToHexStrNoOffset(438))),
-            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_ARMORSKIN", MemorySource.Base, null, new MemoryConditionConfig(1, indexToHexStrNoOffset(439))),
-            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_MEGA_ARMORSKIN", MemorySource.Base, null, new MemoryConditionConfig(2, indexToHexStrNoOffset(439))),
             //end broken
+
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_DEMONDRUG", MemorySource.Base, null, new MemoryConditionConfig(1, indexToHexStrNoOffset(437))),
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_MEGA_DEMONDRUG", MemorySource.Base, null, new MemoryConditionConfig(2, indexToHexStrNoOffset(437))),
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_ARMORSKIN", MemorySource.Base, null, new MemoryConditionConfig(1, indexToHexStrNoOffset(438))),
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_MEGA_ARMORSKIN", MemorySource.Base, null, new MemoryConditionConfig(2, indexToHexStrNoOffset(438))),
 
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_COOL_DRINK", MemorySource.Base, indexToHexStrNoOffset(443)),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_HOT_DRINK", MemorySource.Base, indexToHexStrNoOffset(444)),
