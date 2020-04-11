@@ -84,13 +84,13 @@ namespace SmartHunter.Game.Config
             new StatusEffectConfig("Coral", "LOC_STATUS_EFFECT_HEALTH_RECOVERY", MemorySource.Base, indexToHexStrNoOffset(77)),
             new StatusEffectConfig("Coral", "LOC_STATUS_EFFECT_HEALTH_BOOST", MemorySource.Base, indexToHexStrNoOffset(78)),
             new StatusEffectConfig("Coral", "LOC_STATUS_EFFECT_STAMINA_USE_REDUCED", MemorySource.Base, indexToHexStrNoOffset(79)),
-            new StatusEffectConfig("Coral", "LOC_STATUS_EFFECT_DIVINE_PROTECTION", MemorySource.Base, indexToHexStrNoOffset(81)),
-            new StatusEffectConfig("Coral", "LOC_STATUS_EFFECT_STUN_NEGATED", MemorySource.Base, indexToHexStrNoOffset(82)),
-            new StatusEffectConfig("Coral", "LOC_STATUS_EFFECT_PARALYSIS_NEGATED", MemorySource.Base, indexToHexStrNoOffset(83)),
-            new StatusEffectConfig("Coral", "LOC_STATUS_EFFECT_TREMORS_NEGATED", MemorySource.Base, indexToHexStrNoOffset(84)),
-            new StatusEffectConfig("Coral", "LOC_STATUS_EFFECT_EARPLUGS_S", MemorySource.Base, indexToHexStrNoOffset(85)),
-            new StatusEffectConfig("Coral", "LOC_STATUS_EFFECT_WIND_PRESSURE_NEGATED", MemorySource.Base, indexToHexStrNoOffset(86)),
-            new StatusEffectConfig("Coral", "LOC_STATUS_EFFECT_ENVIRONMENTAL_DAMAGE_NEGATED", MemorySource.Base, indexToHexStrNoOffset(87)),
+            new StatusEffectConfig("Coral", "LOC_STATUS_EFFECT_DIVINE_PROTECTION", MemorySource.Base, indexToHexStrNoOffset(82)),
+            new StatusEffectConfig("Coral", "LOC_STATUS_EFFECT_STUN_NEGATED", MemorySource.Base, indexToHexStrNoOffset(83)),
+            new StatusEffectConfig("Coral", "LOC_STATUS_EFFECT_PARALYSIS_NEGATED", MemorySource.Base, indexToHexStrNoOffset(84)),
+            new StatusEffectConfig("Coral", "LOC_STATUS_EFFECT_TREMORS_NEGATED", MemorySource.Base, indexToHexStrNoOffset(85)),
+            new StatusEffectConfig("Coral", "LOC_STATUS_EFFECT_EARPLUGS_S", MemorySource.Base, indexToHexStrNoOffset(86)),
+            new StatusEffectConfig("Coral", "LOC_STATUS_EFFECT_WIND_PRESSURE_NEGATED", MemorySource.Base, indexToHexStrNoOffset(87)),
+            new StatusEffectConfig("Coral", "LOC_STATUS_EFFECT_ENVIRONMENTAL_DAMAGE_NEGATED", MemorySource.Base, indexToHexStrNoOffset(88)),
 
             new StatusEffectConfig("Debuff", "LOC_STATUS_EFFECT_POISON", MemorySource.Base, indexToHexStrNoOffset(375)),
 
@@ -109,24 +109,27 @@ namespace SmartHunter.Game.Config
             new StatusEffectConfig("Debuff", "LOC_STATUS_EFFECT_NO_ITEMS", MemorySource.Base, indexToHexStrNoOffset(391)),
             new StatusEffectConfig("Debuff", "LOC_STATUS_EFFECT_BLASTBLIGHT", MemorySource.Base, indexToHexStrNoOffset(392)),
 
-            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_DASH_JUICE", MemorySource.Base, indexToHexStrNoOffset(421)),
-            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_WIGGLY_LITCHI", MemorySource.Base, indexToHexStrNoOffset(422)),
-            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_IMMUNIZER", MemorySource.Base, indexToHexStrNoOffset(423)),
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_DASH_JUICE", MemorySource.Base, indexToHexStrNoOffset(420)),
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_WIGGLY_LITCHI", MemorySource.Base, indexToHexStrNoOffset(421)),
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_IMMUNIZER", MemorySource.Base, indexToHexStrNoOffset(422)),
 
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_DEMON_POWDER", MemorySource.Base, indexToHexStrNoOffset(433)),
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_HARDSHELL_POWDER", MemorySource.Base, indexToHexStrNoOffset(434)),
+
+            //broken
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_MIGHT_SEED", MemorySource.Base, indexToHexStrNoOffset(425), new MemoryConditionConfig(0, indexToHexStrNoOffset(427))),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_MIGHT_PILL", MemorySource.Base, indexToHexStrNoOffset(425), new MemoryConditionConfig(1, indexToHexStrNoOffset(427))),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_ADAMANT_SEED", MemorySource.Base, indexToHexStrNoOffset(429), new MemoryConditionConfig(20, indexToHexStrNoOffset(430))),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_ADAMANT_PILL", MemorySource.Base, indexToHexStrNoOffset(429), new MemoryConditionConfig(0, indexToHexStrNoOffset(430))),
-            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_DEMON_POWDER", MemorySource.Base, indexToHexStrNoOffset(434)),
-            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_HARDSHELL_POWDER", MemorySource.Base, indexToHexStrNoOffset(435)),
 
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_DEMONDRUG", MemorySource.Base, null, new MemoryConditionConfig(1, indexToHexStrNoOffset(438))),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_MEGA_DEMONDRUG", MemorySource.Base, null, new MemoryConditionConfig(2, indexToHexStrNoOffset(438))),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_ARMORSKIN", MemorySource.Base, null, new MemoryConditionConfig(1, indexToHexStrNoOffset(439))),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_MEGA_ARMORSKIN", MemorySource.Base, null, new MemoryConditionConfig(2, indexToHexStrNoOffset(439))),
+            //end broken
 
-            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_COOL_DRINK", MemorySource.Base, indexToHexStrNoOffset(444)),
-            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_HOT_DRINK", MemorySource.Base, indexToHexStrNoOffset(445)),
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_COOL_DRINK", MemorySource.Base, indexToHexStrNoOffset(443)),
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_HOT_DRINK", MemorySource.Base, indexToHexStrNoOffset(444)),
 
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_PROTECTIVE_POLISH", MemorySource.Base, indexToHexStrNoOffset(476)),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_AFFINITY_SLIDING", MemorySource.Base, indexToHexStrNoOffset(477)),
