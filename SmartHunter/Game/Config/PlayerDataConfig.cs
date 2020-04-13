@@ -130,8 +130,8 @@ namespace SmartHunter.Game.Config
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_COOL_DRINK", MemorySource.Base, indexToHexStrNoOffset(443)),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_HOT_DRINK", MemorySource.Base, indexToHexStrNoOffset(444)),
 
-            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_PROTECTIVE_POLISH", MemorySource.Base, indexToHexStrNoOffset(476)),
-            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_AFFINITY_SLIDING", MemorySource.Base, indexToHexStrNoOffset(477)),
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_PROTECTIVE_POLISH", MemorySource.Base, indexToHexStrNoOffset(475)),
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_AFFINITY_SLIDING", MemorySource.Base, indexToHexStrNoOffset(476)),
 
             new StatusEffectConfig("Equipment", "LOC_EQUIPMENT_MANTLE_GHILLIE", MemorySource.Equipment, indexToHexStrMantles(0)),
             new StatusEffectConfig("Equipment", "LOC_EQUIPMENT_MANTLE_TEMPORAL", MemorySource.Equipment, indexToHexStrMantles(1)),
