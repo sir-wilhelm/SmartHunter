@@ -1,6 +1,3 @@
-using System.Linq;
-using SmartHunter.Game.Data;
-
 namespace SmartHunter.Game.Config
 {
     public class PlayerDataConfig
@@ -116,8 +113,8 @@ namespace SmartHunter.Game.Config
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_DEMON_POWDER", MemorySource.Base, indexToHexStrNoOffset(433)),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_HARDSHELL_POWDER", MemorySource.Base, indexToHexStrNoOffset(434)),
 
-            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_MIGHT_SEED", MemorySource.Base, indexToHexStrNoOffset(424), new MemoryConditionConfig(0, indexToHexStrNoOffset(426))),
-            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_MIGHT_PILL", MemorySource.Base, indexToHexStrNoOffset(424), new MemoryConditionConfig(1, indexToHexStrNoOffset(426))),
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_MIGHT_SEED", MemorySource.Base, indexToHexStrNoOffset(424), new MemoryConditionConfig(10, indexToHexStrNoOffset(425))),
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_MIGHT_PILL", MemorySource.Base, indexToHexStrNoOffset(424), new MemoryConditionConfig(25, indexToHexStrNoOffset(425))),
 
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_ADAMANT_SEED", MemorySource.Base, indexToHexStrNoOffset(428), new MemoryConditionConfig(20, indexToHexStrNoOffset(429))),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_ADAMANT_PILL", MemorySource.Base, indexToHexStrNoOffset(428), new MemoryConditionConfig(0, indexToHexStrNoOffset(429))),
