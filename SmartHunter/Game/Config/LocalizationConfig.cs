@@ -212,6 +212,7 @@ namespace SmartHunter.Config
             { "LOC_STATUS_0", "Status 0" },
             { "LOC_STATUS_EFFECT_UNKNOWN", "Unknown Status Effect" },
             { "LOC_STATUS_EFFECT_POISON", "Poison" },
+            { "LOC_STATUS_EFFECT_VENOM", "Venom"},
             { "LOC_STATUS_EFFECT_PARALYSIS", "Paralysis" },
             { "LOC_STATUS_EFFECT_SLEEP", "Sleep" },
             { "LOC_STATUS_EFFECT_BLAST", "Blast" },
@@ -295,6 +296,7 @@ namespace SmartHunter.Config
             { "LOC_STATUS_EFFECT_ELEMENTAL_RESISTANCE_DOWN", "Elemental Resistance Down" },
             { "LOC_STATUS_EFFECT_NO_ITEMS", "No Items" },
             { "LOC_STATUS_EFFECT_BLASTBLIGHT", "Blastblight" },
+            { "LOC_STATUS_EFFECT_BLASTSCOURGE", "Blastscourge" },
             
             // Buffs
             { "LOC_STATUS_EFFECT_DASH_JUICE", "Dash Juice" },

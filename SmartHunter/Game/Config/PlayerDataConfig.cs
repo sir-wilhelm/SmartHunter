@@ -91,6 +91,7 @@ namespace SmartHunter.Game.Config
 
             new StatusEffectConfig("Debuff", "LOC_STATUS_EFFECT_POISON", MemorySource.Base, indexToHexStrNoOffset(375)),
 
+            new StatusEffectConfig("Debuff", "LOC_STATUS_EFFECT_VENOM", MemorySource.Base, indexToHexStrNoOffset(376)),
             new StatusEffectConfig("Debuff", "LOC_STATUS_EFFECT_FIREBLIGHT", MemorySource.Base, indexToHexStrNoOffset(379)),
             new StatusEffectConfig("Debuff", "LOC_STATUS_EFFECT_THUNDERBLIGHT", MemorySource.Base, indexToHexStrNoOffset(380)),
             new StatusEffectConfig("Debuff", "LOC_STATUS_EFFECT_WATERBLIGHT", MemorySource.Base, indexToHexStrNoOffset(381)),
@@ -105,6 +106,7 @@ namespace SmartHunter.Game.Config
 
             new StatusEffectConfig("Debuff", "LOC_STATUS_EFFECT_NO_ITEMS", MemorySource.Base, indexToHexStrNoOffset(391)),
             new StatusEffectConfig("Debuff", "LOC_STATUS_EFFECT_BLASTBLIGHT", MemorySource.Base, indexToHexStrNoOffset(392)),
+            new StatusEffectConfig("Debuff", "LOC_STATUS_EFFECT_BLASTSCOURGE", MemorySource.Base, indexToHexStrNoOffset(399)),
 
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_DASH_JUICE", MemorySource.Base, indexToHexStrNoOffset(420)),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_WIGGLY_LITCHI", MemorySource.Base, indexToHexStrNoOffset(421)),
