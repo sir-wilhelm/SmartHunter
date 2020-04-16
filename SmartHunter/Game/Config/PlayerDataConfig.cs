@@ -1,3 +1,5 @@
+using System;
+
 namespace SmartHunter.Game.Config
 {
     public class PlayerDataConfig
@@ -13,6 +15,12 @@ namespace SmartHunter.Game.Config
             ulong multiplier = 0x4;
             var hex = baseOffset + (multiplier * (ulong)index);
             return $"{prefix}{hex.ToString("X")}";
+        }
+
+        private static int HexStrToIndex(string hexValue)
+        {
+            var value = Convert.ToInt32(hexValue, 16);
+            return value / 0x4;
         }
 
         private static string indexToHexStrMantles(int index) => indexToHexStr(index, 0xEFC);
