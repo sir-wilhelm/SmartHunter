@@ -106,7 +106,7 @@ namespace SmartHunter.Game.Config
 
             new StatusEffectConfig("Debuff", "LOC_STATUS_EFFECT_NO_ITEMS", MemorySource.Base, indexToHexStrNoOffset(391)),
             new StatusEffectConfig("Debuff", "LOC_STATUS_EFFECT_BLASTBLIGHT", MemorySource.Base, indexToHexStrNoOffset(392)),
-            new StatusEffectConfig("Debuff", "LOC_STATUS_EFFECT_BLASTSCOURGE", MemorySource.Base, indexToHexStrNoOffset(399)),
+            new StatusEffectConfig("Debuff", "LOC_STATUS_EFFECT_BLASTSCOURGE", MemorySource.Base, indexToHexStrNoOffset(432)),
 
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_DASH_JUICE", MemorySource.Base, indexToHexStrNoOffset(420)),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_WIGGLY_LITCHI", MemorySource.Base, indexToHexStrNoOffset(421)),
