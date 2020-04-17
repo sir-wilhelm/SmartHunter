@@ -212,7 +212,7 @@ namespace SmartHunter.Config
             { "LOC_STATUS_0", "Status 0" },
             { "LOC_STATUS_EFFECT_UNKNOWN", "Unknown Status Effect" },
             { "LOC_STATUS_EFFECT_POISON", "Poison" },
-            { "LOC_STATUS_EFFECT_VENOM", "Venom"},
+            { "LOC_STATUS_EFFECT_NOXIOUS_POISON", "Noxious Poison"},
             { "LOC_STATUS_EFFECT_PARALYSIS", "Paralysis" },
             { "LOC_STATUS_EFFECT_SLEEP", "Sleep" },
             { "LOC_STATUS_EFFECT_BLAST", "Blast" },
