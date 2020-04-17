@@ -317,6 +317,11 @@ namespace SmartHunter.Config
             { "LOC_STATUS_EFFECT_PROTECTIVE_POLISH", "Protective Polish" },
             { "LOC_STATUS_EFFECT_AFFINITY_SLIDING", "Affinity Sliding" },
 
+            { "LOC_STATUS_EFFECT_HOT_SPRING_HEALTH_RECOVERY","Health Recovery (Hot Spring)"},
+            { "LOC_STATUS_EFFECT_HOT_SPRING_CLODPROOF","Clodproof (Hot Spring)"},
+            { "LOC_STATUS_EFFECT_POWERCONE_ATTACK_UP","Attack UP (Powercone)"},
+            { "LOC_STATUS_EFFECT_THAWPUFFS_ICEPROOF","Iceproof (Thawpuffs)"},
+
             // Equipment
             { "LOC_EQUIPMENT_MANTLE_GHILLIE", "Ghillie Mantle" },
             { "LOC_EQUIPMENT_MANTLE_TEMPORAL", "Temporal Mantle" },

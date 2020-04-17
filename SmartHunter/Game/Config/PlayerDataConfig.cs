@@ -126,6 +126,11 @@ namespace SmartHunter.Game.Config
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_ARMORSKIN", MemorySource.Base, null, new MemoryConditionConfig(1, indexToHexStrNoOffset(438))),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_MEGA_ARMORSKIN", MemorySource.Base, null, new MemoryConditionConfig(2, indexToHexStrNoOffset(438))),
 
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_HOT_SPRING_HEALTH_RECOVERY", MemorySource.Base, indexToHexStrNoOffset(446)),
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_HOT_SPRING_CLODPROOF", MemorySource.Base, indexToHexStrNoOffset(447)),
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_POWERCONE_ATTACK_UP", MemorySource.Base, indexToHexStrNoOffset(454)),
+            new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_THAWPUFFS_ICEPROOF", MemorySource.Base, indexToHexStrNoOffset(455)),
+
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_COOL_DRINK", MemorySource.Base, indexToHexStrNoOffset(443)),
             new StatusEffectConfig("Buff", "LOC_STATUS_EFFECT_HOT_DRINK", MemorySource.Base, indexToHexStrNoOffset(444)),
 
