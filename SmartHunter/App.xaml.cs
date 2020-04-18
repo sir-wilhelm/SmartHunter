@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -25,8 +26,9 @@ namespace SmartHunter
             // Initialize the console view model first thing so we can see any problems that may occur
             var consoleViewModel = ConsoleViewModel.Instance;
 
-            Log.WriteLine($"Started {Assembly.GetExecutingAssembly().GetName().Version}");
-            //Log.WriteLine($"Culture: {System.Globalization.CultureInfo.CurrentCulture.Name}");
+            var assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            var fileVersionInfoVersion = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion;
+            Log.WriteLine($"Started: Assembly Version: {assemblyVersion} | File Version: {fileVersionInfoVersion}");
 
             SetPerMonitorDpiAwareness();
 
