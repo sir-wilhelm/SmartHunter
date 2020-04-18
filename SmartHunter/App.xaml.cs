@@ -22,10 +22,6 @@ namespace SmartHunter
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            //var culture = new System.Globalization.CultureInfo("es-ES");
-            //System.Globalization.CultureInfo.CurrentCulture = culture;
-            //System.Globalization.CultureInfo.CurrentUICulture = culture;
-
             // Initialize the console view model first thing so we can see any problems that may occur
             var consoleViewModel = ConsoleViewModel.Instance;
 
@@ -40,22 +36,6 @@ namespace SmartHunter
             m_SkinFile = new FileContainer(ConfigHelper.Main.Values.SkinFileName);
             m_SkinFile.Changed += (s1, e1) => { LoadSkin(); };
             LoadSkin();
-
-            try
-            {
-                string[] files = Directory.GetFiles(".");
-                foreach (string file in files)
-                {
-                    if (Path.GetExtension(file).Equals(".exe") && file.Contains("SmartHunter_"))
-                    {
-                        File.Delete(file);
-                    }
-                }
-            }
-            catch
-            {
-                
-            }
 
             m_Overlay = new MhwOverlay(new ConsoleWindow(), new TeamWidgetWindow(), new MonsterWidgetWindow(), new PlayerWidgetWindow(), new DebugWidgetWindow());
 
