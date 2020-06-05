@@ -311,6 +311,7 @@ namespace SmartHunter.Game.Helpers
         {
             if (mapBaseAddress != 0x0)
             {
+                // update pointer address
                 bool isMonsterSelected = MemoryHelper.Read<ulong>(process, mapBaseAddress + 0x128) != 0x0;
                 if (isMonsterSelected)
                 {
