@@ -315,7 +315,7 @@ namespace SmartHunter.Game.Helpers
                 bool isMonsterSelected = MemoryHelper.Read<ulong>(process, mapBaseAddress + 0x128) != 0x0;
                 if (isMonsterSelected)
                 {
-                    ulong selectedMonsterAddress = MemoryHelper.Read<ulong>(process, mapBaseAddress + 0x148) - 0X40;
+                    ulong selectedMonsterAddress = MemoryHelper.Read<ulong>(process, mapBaseAddress + 0x148);
                     var selectedMonster = UpdateAndGetMonster(process, selectedMonsterAddress);
                     if (selectedMonster != null)
                     {
@@ -600,13 +600,13 @@ namespace SmartHunter.Game.Helpers
             {
                 currentStaminaBuildUp = MemoryHelper.Read<float>(process, staminaAddress);
             }
-            float maxFatigueDuration = MemoryHelper.Read<float>(process, staminaAddress + 0x8);
+            float maxFatigueDuration = MemoryHelper.Read<float>(process, staminaAddress + 0x0C);
             float currentFatigueDuration = 0;
             if (maxFatigueDuration > 0)
             {
-                currentFatigueDuration = MemoryHelper.Read<float>(process, staminaAddress + 0x0C);
+                currentFatigueDuration = MemoryHelper.Read<float>(process, staminaAddress + 0x10);
             }
-            int fatigueActivatedCount = MemoryHelper.Read<int>(process, staminaAddress + 0x10);
+            int fatigueActivatedCount = MemoryHelper.Read<int>(process, staminaAddress + 0x14);
             MonsterStatusEffectConfig statusEffect = null;
             if (currentFatigueDuration > 0)
             {
@@ -624,11 +624,11 @@ namespace SmartHunter.Game.Helpers
 
             // Rage
             ulong rageAddress = monster.Address + DataOffsets.Monster.MonsterRageOffset;
-            float maxRageBuildUp = MemoryHelper.Read<float>(process, rageAddress + 0x0C);
+            float maxRageBuildUp = MemoryHelper.Read<float>(process, rageAddress + 0x18);
             float currentRageBuildUp = 0;
             if (maxRageBuildUp > 0)
             {
-                currentRageBuildUp = MemoryHelper.Read<float>(process, rageAddress + 0x08);
+                currentRageBuildUp = MemoryHelper.Read<float>(process, rageAddress - 0x0C);
             }
             float maxRageDuration = MemoryHelper.Read<float>(process, rageAddress + 0x04);
             float currentRageDuration = 0;
