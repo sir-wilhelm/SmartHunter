@@ -94,8 +94,8 @@ namespace SmartHunter.Game
             {
                 if (ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible && m_MonsterPattern.MatchedAddresses.Any())
                 {
-                    var monsterRootPtr = MemoryHelper.LoadEffectiveAddressRelative(Process, m_MonsterPattern.MatchedAddresses.First()) - 0x36CE0; // yeah i know this is basically a static pointer
-                    var monsterBaseList = MemoryHelper.ReadMultiLevelPointer(traceUniquePointers, Process, monsterRootPtr, 0x128, 0x8, 0x0);
+                    var monsterRootPtr = MemoryHelper.LoadEffectiveAddressRelative(Process, m_MonsterPattern.MatchedAddresses.First()); // - 0x36CE0(old) ... yeah i know this is basically a static pointer
+                    var monsterBaseList = MemoryHelper.ReadMultiLevelPointer(traceUniquePointers, Process, monsterRootPtr, 0x698, 0x0, 0x138, 0x0);
                     ulong mapBaseAddress = 0x0;
                     if (ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowOnlySelectedMonster && m_SelectedMonsterPattern.MatchedAddresses.Any())
                     {
