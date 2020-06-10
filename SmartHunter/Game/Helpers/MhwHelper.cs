@@ -475,20 +475,29 @@ namespace SmartHunter.Game.Helpers
                     }
 
                     uint maxRemovableParts = (uint)ConfigHelper.MonsterData.Values.Monsters[monster.Id].Parts.Where(p => p.IsRemovable).Count();
-                    bool isLast = MemoryHelper.Read<uint>(process, removablePartAddress + 0x94) == 0x1;
+                    //bool isLast = MemoryHelper.Read<uint>(process, removablePartAddress + 0x94) == 0x1;
                     //bool isValid = MemoryHelper.Read<byte>(process, removablePartAddress + 0x15) == 0;
                     bool isValid = MemoryHelper.Read<uint>(process, removablePartAddress + 0x6C) < maxRemovableParts;
 
                     if (isValid)
                     {
                         float maxHealth = MemoryHelper.Read<float>(process, removablePartAddress + DataOffsets.MonsterRemovablePart.MaxHealth);
+                        int mpart = MemoryHelper.Read<int>(process, removablePartAddress + 0x14);
                         if (maxHealth > 0)
                         {
-                            UpdateMonsterRemovablePart(process, monster, removablePartAddress);
-                            if (isLast || monster.Parts.Where(p => p.IsRemovable).Count() == maxRemovableParts)
-                            {
+                            MonsterPart mPart = UpdateMonsterRemovablePart(process, monster, removablePartAddress);
+                            if (/*isLast || */monster.Parts.Where(p => p.IsRemovable).Count() == maxRemovableParts)
                                 break;
-                            }
+                            bool isSame;
+                            do
+                            {
+                                removablePartAddress += DataOffsets.MonsterRemovablePart.NextRemovablePart;
+                                float nMaxHealth = MemoryHelper.Read<float>(process, removablePartAddress + DataOffsets.MonsterRemovablePart.MaxHealth);
+                                float nHealth = MemoryHelper.Read<float>(process, removablePartAddress + DataOffsets.MonsterRemovablePart.CurrentHealth);
+                                int npart = MemoryHelper.Read<int>(process, removablePartAddress + 0x14);
+                                int nBrokenCount = MemoryHelper.Read<int>(process, removablePartAddress + DataOffsets.MonsterRemovablePart.TimesBrokenCount);
+                                isSame = (mPart.Health.Max == nMaxHealth && mPart.Health.Current == nHealth && mpart == npart);
+                            } while (isSame);
                         }
                     }
 
@@ -497,13 +506,13 @@ namespace SmartHunter.Game.Helpers
             }
         }
 
-        private static void UpdateMonsterRemovablePart(Process process, Monster monster, ulong removablePartAddress)
+        private static MonsterPart UpdateMonsterRemovablePart(Process process, Monster monster, ulong removablePartAddress)
         {
             float maxHealth = MemoryHelper.Read<float>(process, removablePartAddress + DataOffsets.MonsterRemovablePart.MaxHealth);
             float currentHealth = MemoryHelper.Read<float>(process, removablePartAddress + DataOffsets.MonsterRemovablePart.CurrentHealth);
             int timesBrokenCount = MemoryHelper.Read<int>(process, removablePartAddress + DataOffsets.MonsterRemovablePart.TimesBrokenCount);
 
-            monster.UpdateAndGetPart(removablePartAddress, true, maxHealth, currentHealth, timesBrokenCount);
+            return monster.UpdateAndGetPart(removablePartAddress, true, maxHealth, currentHealth, timesBrokenCount);
         }
 
         private static void UpdateMonsterStatusEffects(Process process, Monster monster)
