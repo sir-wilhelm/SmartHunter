@@ -37,22 +37,27 @@ namespace SmartHunter.Game.Data.ViewModels
             Environment.Exit(0);
         }
 
+        private string GetString(string stringId)
+        {
+            return LocalizationHelper.GetString(stringId);
+        }
+
         public SettingsViewModel()
         {
             Settings = new List<Setting>();
 
-            Settings.Add(new Setting(ConfigHelper.Main.Values.ShutdownWhenProcessExits, "Shutdown when process exits", "Shutdown SmartHunter as soon as MonsterHunterWorld is killed", new Command(_ =>
+            Settings.Add(new Setting(ConfigHelper.Main.Values.ShutdownWhenProcessExits, GetString("LOC_SETTING_SHUTDOWN_WHEN_PROCESS_EXIT"), GetString("LOC_SETTING_SHUTDOWN_WHEN_PROCESS_EXIT_DESC"), new Command(_ =>
             {
                 ConfigHelper.Main.Values.ShutdownWhenProcessExits = !ConfigHelper.Main.Values.ShutdownWhenProcessExits;
                 ConfigHelper.Main.Save();
             })));
-            Settings.Add(new Setting(ConfigHelper.Main.Values.AutomaticallyCheckAndDownloadUpdates, "Automatically check and download updates", "If enabled SmartHunter will automatically check and download new updates", new Command(_ =>
+            Settings.Add(new Setting(ConfigHelper.Main.Values.AutomaticallyCheckAndDownloadUpdates, GetString("LOC_SETTING_AUTO_CHECK_AND_DOWNLOAD_UPDATES"), GetString("LOC_SETTING_AUTO_CHECK_AND_DOWNLOAD_UPDATES_DESC"), new Command(_ =>
             {
                 ConfigHelper.Main.Values.AutomaticallyCheckAndDownloadUpdates = !ConfigHelper.Main.Values.AutomaticallyCheckAndDownloadUpdates;
                 ConfigHelper.Main.Save();
                 if (!ConfigHelper.Main.Values.AutomaticallyCheckAndDownloadUpdates)
                 {
-                    var result = MessageBox.Show("This feature will work on the next open of Smarthunter. Would you like to reopen it now?", "Restart", MessageBoxButton.YesNo, MessageBoxImage.Information);
+                    var result = MessageBox.Show(GetString("LOC_SETTING_RESTART_DESC"), GetString("LOC_SETTING_RESTART"), MessageBoxButton.YesNo, MessageBoxImage.Information);
                     if (result == MessageBoxResult.Yes)
                     {
                         restartSmartHunter();
@@ -60,117 +65,129 @@ namespace SmartHunter.Game.Data.ViewModels
                 }
             })));
 
-            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.HideWhenGameWindowIsInactive, "Hide when game window is inactive", "Automatically hide every SmartHunter window when MonsterHunterWorld it not top most application", new Command(_ =>
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.HideWhenGameWindowIsInactive, GetString("LOC_SETTING_HIDE_WHEN_GAME_WINDOW_IS_INACTIVE"), GetString("LOC_SETTING_HIDE_WHEN_GAME_WINDOW_IS_INACTIVE_DESC"), new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.HideWhenGameWindowIsInactive = !ConfigHelper.Main.Values.Overlay.HideWhenGameWindowIsInactive;
                 ConfigHelper.Main.Save();
             })));
 
-            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.TeamWidget.IsVisible, "Team Widget", "Show/Hide Team Widget", new Command(_ =>
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.TeamWidget.IsVisible, GetString("LOC_SETTING_TEAM_WIDGET"), GetString("LOC_SETTING_TEAM_WIDGET_DESC"), new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.TeamWidget.IsVisible = !ConfigHelper.Main.Values.Overlay.TeamWidget.IsVisible;
                 ConfigHelper.Main.Save();
             })));
 
-            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.TeamWidget.DontShowIfAlone, "Dont show if alone", "Automatically hide Team Widget if you are alone in a mission", new Command(_ =>
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.TeamWidget.DontShowIfAlone, GetString("LOC_SETTING_DONT_SHOW_IF_ALONE"), GetString("LOC_SETTING_DONT_SHOW_IF_ALONE_DESC"), new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.TeamWidget.DontShowIfAlone = !ConfigHelper.Main.Values.Overlay.TeamWidget.DontShowIfAlone;
                 ConfigHelper.Main.Save();
             })));
 
-            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.TeamWidget.ShowBars, "Team Widget show bars", "Show Bars inside Team Widget", new Command(_ =>
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.TeamWidget.ShowBars, GetString("LOC_SETTING_TEAM_WIDGET_SHOW_BARS"), GetString("LOC_SETTING_TEAM_WIDGET_SHOW_BARS_DESC"), new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.TeamWidget.ShowBars = !ConfigHelper.Main.Values.Overlay.TeamWidget.ShowBars;
                 ConfigHelper.Main.Save();
             })));
 
-            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.TeamWidget.ShowNumbers, "Team Widget show numbers", "Show Numbers inside Team Widget", new Command(_ =>
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.TeamWidget.ShowNumbers, GetString("LOC_SETTING_TEAM_WIDGET_SHOW_NUMBERS"), GetString("LOC_SETTING_TEAM_WIDGET_SHOW_NUMBERS_DESC"), new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.TeamWidget.ShowNumbers = !ConfigHelper.Main.Values.Overlay.TeamWidget.ShowNumbers;
                 ConfigHelper.Main.Save();
             })));
 
-            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.TeamWidget.ShowPercents, "Team Widget show percents", "Show Percents inside Team Widget", new Command(_ =>
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.TeamWidget.ShowPercents, GetString("LOC_SETTING_TEAM_WIDGET_SHOW_PERCENTS"), GetString("LOC_SETTING_TEAM_WIDGET_SHOW_PERCENTS_DESC"), new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.TeamWidget.ShowPercents = !ConfigHelper.Main.Values.Overlay.TeamWidget.ShowPercents;
                 ConfigHelper.Main.Save();
             })));
 
-            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible, "Monster Widget", "Show/Hide Monsters Widget", new Command(_ =>
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible, GetString("LOC_SETTING_MONSTER_WIDGET"), GetString("LOC_SETTING_MONSTER_WIDGET_DESC"), new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible = !ConfigHelper.Main.Values.Overlay.MonsterWidget.IsVisible;
                 ConfigHelper.Main.Save();
             })));
 
-            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedMonsters, "Show unchanged monsters", "Automatically hide monsters if they are not damaged", new Command(_ =>
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedMonsters, GetString("LOC_SETTING_SHOW_UNCHANGED_MONSTERS"), GetString("LOC_SETTING_SHOW_UNCHANGED_MONSTERS_DESC"), new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedMonsters = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedMonsters;
                 ConfigHelper.Main.Save();
             })));
 
-            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedParts, "Show unchanged parts", "Automatically hide monsters parts if they are not damaged", new Command(_ =>
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedParts, GetString("LOC_SETTING_SHOW_UNCHANGED_PARTS"), GetString("LOC_SETTING_SHOW_UNCHANGED_PARTS_DESC"), new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedParts = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedParts;
                 ConfigHelper.Main.Save();
             })));
 
-            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedStatusEffects, "Show unchanged status effects", "Automatically hide monsters status effects when there weren't any changes", new Command(_ =>
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedStatusEffects, GetString("LOC_SETTING_SHOW_UNCHANGED_STATUS_EFFECTS"), GetString("LOC_SETTING_SHOW_UNCHANGED_STATUS_EFFECTS_DESC"), new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedStatusEffects = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowUnchangedStatusEffects;
                 ConfigHelper.Main.Save();
             })));
 
-            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowSize, "Show monster size", "Show monster size hover its name", new Command(_ =>
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowSize, GetString("LOC_SETTING_SHOW_MONSTER_SIZE"), GetString("LOC_SETTING_SHOW_MONSTER_SIZE_DESC"), new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowSize = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowSize;
                 ConfigHelper.Main.Save();
             })));
 
-            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowCrown, "Show monster crown", "Show monster crown image", new Command(_ =>
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowCrown, GetString("LOC_SETTING_SHOW_MONSTER_CROWN"), GetString("LOC_SETTING_SHOW_MONSTER_CROWN_DESC"), new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowCrown = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowCrown;
                 ConfigHelper.Main.Save();
             })));
 
-            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowBars, "Monster Widget show bars", "Show Bars inside Monster Widget", new Command(_ =>
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowBars, GetString("LOC_SETTING_MONSTER_WIDGET_SHOW_BARS"), GetString("LOC_SETTING_MONSTER_WIDGET_SHOW_BARS_DESC"), new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowBars = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowBars;
                 ConfigHelper.Main.Save();
             })));
 
-            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowNumbers, "Monster Widget show numbers", "Show Numbers inside Monster Widget", new Command(_ =>
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowNumbers, GetString("LOC_SETTING_MONSTER_WIDGET_SHOW_NUMBERS"), GetString("LOC_SETTING_MONSTER_WIDGET_SHOW_NUMBERS_DESC"), new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowNumbers = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowNumbers;
                 ConfigHelper.Main.Save();
             })));
 
-            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowPercents, "Monster Widget show percents", "Show Percents inside Monster Widget", new Command(_ =>
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowPercents, GetString("LOC_SETTING_MONSTER_WIDGET_SHOW_PERCENTS"), GetString("LOC_SETTING_MONSTER_WIDGET_SHOW_PERCENTS_DESC"), new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowPercents = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowPercents;
                 ConfigHelper.Main.Save();
             })));
 
-            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.UseAnimations, "Use animations", "Enable/Disable Animations for status effects", new Command(_ =>
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.UseAnimations, GetString("LOC_SETTING_USE_ANIMATIONS"), GetString("LOC_SETTING_USE_ANIMATIONS_DESC"), new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.MonsterWidget.UseAnimations = !ConfigHelper.Main.Values.Overlay.MonsterWidget.UseAnimations;
                 ConfigHelper.Main.Save();
             })));
 
-            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowOnlySelectedMonster, "Show only selected monster", "Show only the monster that you selected for your hunt", new Command(_ =>
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowOnlySelectedMonster, GetString("LOC_SETTING_SHOW_ONLY_SELECTED_MONSTER"), GetString("LOC_SETTING_SHOW_ONLY_SELECTED_MONSTER_DESC"), new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowOnlySelectedMonster = !ConfigHelper.Main.Values.Overlay.MonsterWidget.ShowOnlySelectedMonster;
                 ConfigHelper.Main.Save();
             })));
 
-            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.PlayerWidget.IsVisible, "Player Widget", "Show/Hide Player Widget", new Command(_ =>
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.MonsterWidget.AlwaysShowParts, GetString("LOC_SETTING_ALWAYS_SHOW_PARTS"), GetString("LOC_SETTING_ALWAYS_SHOW_PARTS_DESC"), new Command(_ =>
+            {
+                ConfigHelper.Main.Values.Overlay.MonsterWidget.AlwaysShowParts = !ConfigHelper.Main.Values.Overlay.MonsterWidget.AlwaysShowParts;
+                ConfigHelper.Main.Save();
+            })));
+
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.PlayerWidget.IsVisible, GetString("LOC_SETTING_PLAYER_WIDGET"), GetString("LOC_SETTING_PLAYER_WIDGET_DESC"), new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.PlayerWidget.IsVisible = !ConfigHelper.Main.Values.Overlay.PlayerWidget.IsVisible;
                 ConfigHelper.Main.Save();
             })));
 
-            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.DebugWidget.IsVisible, "Debug Widget", "Show/Hide Debug Widget", new Command(_ =>
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Overlay.DebugWidget.IsVisible, GetString("LOC_SETTING_DEGUB_WIDGET"), GetString("LOC_SETTING_DEGUB_WIDGET_DESC"), new Command(_ =>
             {
                 ConfigHelper.Main.Values.Overlay.DebugWidget.IsVisible = !ConfigHelper.Main.Values.Overlay.DebugWidget.IsVisible;
+                ConfigHelper.Main.Save();
+            })));
+
+            Settings.Add(new Setting(ConfigHelper.Main.Values.Debug.ShowServerLogs, GetString("LOC_SETTING_SHOW_SERVER_LOGS"), GetString("LOC_SETTING_SHOW_SERVER_LOGS_DESC"), new Command(_ =>
+            {
+                ConfigHelper.Main.Values.Debug.ShowServerLogs = !ConfigHelper.Main.Values.Debug.ShowServerLogs;
                 ConfigHelper.Main.Save();
             })));
         }
