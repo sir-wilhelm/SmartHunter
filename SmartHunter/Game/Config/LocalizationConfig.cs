@@ -35,6 +35,7 @@ namespace SmartHunter.Config
             { "LOC_MONSTER_ACIDIC_GLAVENUS", "Acidic Glavenus" },
             { "LOC_MONSTER_BLACKVEIL_VAAL_HAZAK", "Blackveil Vaal Hazak" },
             { "LOC_MONSTER_BARIOTH", "Barioth" },
+            { "LOC_MONSTER_FROSTFANG_BARIOTH", "Frostfang Barioth" },
             { "LOC_MONSTER_SAVAGE_DEVILJHO", "Savage Deviljho" },
             { "LOC_MONSTER_RUINER_NERGIGANTE", "Ruiner Nergigante" },
             { "LOC_MONSTER_VIPER_TOBI_KADACHI", "Viper Tobi Kadachi" },
