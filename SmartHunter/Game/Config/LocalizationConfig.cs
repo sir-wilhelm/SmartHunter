@@ -85,6 +85,7 @@ namespace SmartHunter.Config
             { "LOC_MONSTER_VAAL_HAZAK", "Vaal Hazak" },
             { "LOC_MONSTER_XENO_JIIVA", "Xeno'jiiva" },
             { "LOC_MONSTER_ZORAH_MAGDAROS", "Zorah Magdaros" },
+            { "LOC_MONSTER_ALATREON", "Alatreon"},
             { "LOC_PART_UKNOWN", "Unknown Part" },
 
             { "LOC_PART_HEAD_SNOW", "Head Snow" },

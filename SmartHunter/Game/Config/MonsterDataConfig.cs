@@ -465,6 +465,24 @@ namespace SmartHunter.Game.Config
                     new MonsterCrownConfig(CrownPreset.Alternate)
                 )
             },
+            {
+                "em050_00",
+                new MonsterConfig("LOC_MONSTER_ALATREON",
+                    new MonsterPartConfig[]
+                    {
+                        new MonsterPartConfig("Removable", "LOC_REMOVABLE_PART_TAIL", true),
+                        new MonsterPartConfig("Part", "LOC_PART_HEAD"),
+                        new MonsterPartConfig("Part", "LOC_PART_BODY"),
+                        new MonsterPartConfig("Part", "LOC_PART_BACK"),
+                        new MonsterPartConfig("Part", "LOC_PART_ARMS"),
+                        new MonsterPartConfig("Part", "LOC_PART_LEGS"),
+                        new MonsterPartConfig("Part", "LOC_PART_TAIL")
+                    },
+                    2474.69f,
+                    new MonsterCrownConfig(CrownPreset.Standard),
+                    true
+                )
+            },
             { // true
                 "em057_00",
                 new MonsterConfig("LOC_MONSTER_ZINOGRE",
